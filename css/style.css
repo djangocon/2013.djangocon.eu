@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Sansation";
+    font-style: normal;
+    font-weight: normal;
+    src: url("sansation/Sansation_Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Riotsqua";
+    font-style: normal;
+    font-weight: normal;
+    src: url("riotsqua.ttf") format("truetype");
+}
+
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+/* Piotr Bulinski's styles for DjangoCircus */
+body {
+    font-family: "Sansation", Verdana, sans-serif;
+    background:#fcfdf1 url('../img/bg.jpg') no-repeat left top;
+}
+
+.header {
+    font-family: "Riotsqua", Impact, fantasy;
+}
+
+.top_menu {
+    background:#172423 url('../img/bg_top.jpg') no-repeat 1040px top;
+    height: 57px;
+    width: 100%;
+    padding-left: 400px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.top_menu ul li {
+    font: RiotSquad;
+    display: inline-block;
+    font-size: 24px;
+    color: #dad9a4;
+    padding-top: 14px;
+    padding-left: 30px;
+}
+
+.top_menu ul li a {
+    color: #dad9a4;
+}
+
+.top_logo {
+    position: absolute;
+    left: 7px;
+    top: 5px;
+}
