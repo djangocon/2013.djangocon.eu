@@ -4,11 +4,12 @@
     font-weight: normal;
     src: url("sansation/Sansation_Regular.ttf") format("truetype");
 }
+
 @font-face {
-    font-family: "Riotsqua";
+    font-family: "RiotSquad";
     font-style: normal;
     font-weight: normal;
-    src: url("riotsqua.ttf") format("truetype");
+    src: url("RiotSquadNF.ttf") format("truetype");
 }
 
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
@@ -21,14 +22,16 @@ body {
 }
 
 .header {
-    font-family: "Riotsqua", Impact, fantasy;
+    font-family: "RiotSquad", Impact, fantasy;
+    font-size: 32px;
 }
 
 .top_menu {
     background:#172423 url('../img/bg_top.jpg') no-repeat 1040px top;
     height: 57px;
     width: 100%;
-    padding-left: 400px;
+    padding-left: 410px;
+    margin-bottom: 280px;
 }
 
 a {
@@ -36,7 +39,6 @@ a {
 }
 
 .top_menu ul li {
-    font: RiotSquad;
     display: inline-block;
     font-size: 24px;
     color: #dad9a4;
@@ -52,4 +54,32 @@ a {
     position: absolute;
     left: 7px;
     top: 5px;
+}
+
+/** about **/
+.about {
+    margin-left: 44px;
+    width: 400px;
+}
+
+.about .header {
+    width: 403px;
+    height: 67px;
+    background: url('../img/h_about.png') no-repeat;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+.about .body {
+    text-align: justify;
+    padding-left: 44px;
+    padding-right: 10px;
+}
+
+.about .footer {
+    background: url('../img/e_about_dots.png') no-repeat;
+    margin-left: 40px;
+    margin-top: 14px;
+    height: 5px;
+    width: 403px;
 }
