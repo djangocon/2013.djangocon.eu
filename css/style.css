@@ -83,3 +83,33 @@ a {
     height: 5px;
     width: 403px;
 }
+
+/** location **/
+.location {
+    margin-top: 110px;
+    margin-left: 44px;
+    width: 400px;
+}
+
+.location .header {
+    width: 403px;
+    height: 67px;
+    background: url('../img/h_about.png') no-repeat;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+.location .body {
+    text-align: justify;
+    padding-left: 44px;
+    padding-right: 10px;
+}
+
+.location .map {
+    background: url('../img/e_map.png') no-repeat;
+    margin-top: 14px;
+    padding-top: 20px;
+    padding-left: 40px;
+    height: 171px;
+    width: 382px;
+}
