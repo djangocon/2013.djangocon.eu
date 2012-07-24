@@ -23,7 +23,12 @@ body {
 
 .header {
     font-family: "RiotSquad", Impact, fantasy;
-    font-size: 32px;
+    font-size: 30px;
+}
+
+.header .small {
+    font-family: "Sansation", Verdana, sans-serif;
+    font-size: 20px;
 }
 
 .top_menu {
@@ -54,6 +59,11 @@ a {
     position: absolute;
     left: 7px;
     top: 5px;
+}
+
+.box_container {
+    width: 460px;
+    float: left;
 }
 
 /** about **/
@@ -112,4 +122,78 @@ a {
     padding-left: 40px;
     height: 171px;
     width: 382px;
+}
+
+/** networks **/
+
+.networks {
+    width: 400px;
+    height: 120px;
+}
+
+.networks .network {
+    float: left;
+    padding: 7px;
+}
+
+.networks .network .counter {
+    background: url('../img/e_net_count.png') no-repeat;
+    width: 66px;
+    height: 34px;
+    font-size: 20px;
+    padding-top: 13px;
+    text-align: center;
+}
+
+.networks .network .icon {
+    margin: 7px 12px;
+    width: 39px;
+    height: 37px; 
+}
+
+.icon.google {
+    background: url('../img/i_g.png') no-repeat;
+}
+
+.icon.facebook {
+    background: url('../img/i_f.png') no-repeat;
+}
+
+.icon.twitter {
+    background: url('../img/i_t.png') no-repeat;
+}
+
+/** twitter **/
+.twitter {
+    background: url('../img/b_twitter.png') no-repeat;
+    width: 437px;
+    height: 661px;
+}
+
+.twitter .header {
+    height: 67px;
+    width: 330px;
+    padding-top: 45px;
+    padding-left: 50px;
+    text-align: center;
+}
+
+.red {
+    color: #d01e32;
+}
+
+.twitter .tweets {
+    width: 320px;
+    height: 150px;
+    margin-top: 30px;
+    margin-left: 64px;
+    overflow: scroll;
+    overflow-y: scroll;
+}
+
+.twitter .tweets .tweet {
+    text-align: justify;
+    border-bottom: 1px solid black;
+    padding: 10px 0px;
+    
 }
