@@ -63,12 +63,12 @@ a {
 
 .box_container {
     width: 460px;
+    padding-left: 20px;
     float: left;
 }
 
 /** about **/
 .about {
-    margin-left: 44px;
     width: 400px;
 }
 
@@ -97,7 +97,6 @@ a {
 /** location **/
 .location {
     margin-top: 110px;
-    margin-left: 44px;
     width: 400px;
 }
 
@@ -195,5 +194,67 @@ a {
     text-align: justify;
     border-bottom: 1px solid black;
     padding: 10px 0px;
-    
+}
+
+/** newsletter **/
+.newsletter {
+    margin-top: -160px;
+    background: url('../img/e_newsletter.png') no-repeat 20px 35px;
+    width: 433px;
+    height: 319px;
+}
+
+.newsletter .header {
+    width: 403px;
+    height: 52px;
+    background: url('../img/h_about.png') no-repeat;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+.newsletter .body {
+    margin-left: 42px;
+    width: 340px;
+    text-align: justify;
+}
+
+.newsletter .form {
+    margin-left: 42px;
+    width: 340px;
+    text-align: center;
+}
+
+.newsletter .form td {
+    padding-top: 5px;
+}
+
+.newsletter .form label,
+.newsletter .form input[type=text] {
+    line-height: 18px;
+    background-color: #ececd1;
+    padding: 12px 3px;
+}
+
+.newsletter .form label {
+    display: block;
+    font-size: 16px;
+    color: #d01e32;
+    width: 60px;
+}
+
+.newsletter .form input[type=text] {
+    font-size: 14px;
+    border: 0px;
+    width: 268px; 
+}
+
+.newsletter .form input[type=button] {
+    font-family: "RiotSquad", Impact, fantasy;
+    font-size: 30px;
+    background: url('../img/e_button.png') no-repeat;
+    width: 152px;
+    height: 49px;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
 }
