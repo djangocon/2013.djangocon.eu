@@ -50,6 +50,9 @@ a {
     padding-top: 14px;
     padding-left: 30px;
 }
+.top_menu ul li:first-child {
+	margin-left: 450px;
+}
 
 .top_menu ul li a {
     color: #dad9a4;
@@ -98,6 +101,7 @@ a {
 .location {
     margin-top: 110px;
     width: 400px;
+    margin-left: 20px;
 }
 
 .location .header {
