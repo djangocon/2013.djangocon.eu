@@ -8,7 +8,6 @@ numpy==1.5.1
 psycopg2==2.4.5
 pyOpenSSL==0.12
 python-dateutil==1.5
-vboxapi==1.0
 virtualenv==1.7.2
 wsgiref==0.1.2
 xattr==0.6.1
