@@ -1,12 +1,12 @@
 from django.conf.urls import patterns, include, url
-
+from django.views.generic.simple import direct_to_template
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'djangocircus.views.home', name='home'),
+     url(r'^$', direct_to_template, {'template': 'index.html'}),
     # url(r'^djangocircus/', include('djangocircus.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
