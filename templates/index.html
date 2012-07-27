@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>DjangoCon Europe 2013 - best Django community event.</title>
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta name="keywords" CONTENT="" />
 </head>
@@ -14,7 +14,7 @@
     </ul>
 </div>
 
-<img src="img/logo.png" alt="DjangoCon Europe Circus Edition" class="top_logo" />
+<img src="{{ STATIC_URL }}img/logo.png" alt="DjangoCon Europe Circus Edition" class="top_logo" />
 
 <div class="box_container">
     <div class="about box">
