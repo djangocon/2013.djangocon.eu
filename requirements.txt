@@ -3,7 +3,6 @@ PyRSS2Gen==1.0.0
 Twisted==11.0.0
 bdist-mpkg==0.4.4
 dj-database-url==0.2.1
-include-server==3.1-toolwhip.1
 macholib==1.3
 modulegraph==0.8.1
 numpy==1.5.1
