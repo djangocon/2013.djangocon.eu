@@ -76,27 +76,35 @@
         <div class="header">Newsletter</div>
         <div class="body">
             Leave us your email so we can keep you posted!    </div>
+           
+        
+        <form action="http://djangocircus.us5.list-manage.com/subscribe/post?u=b2911be76638dbf5e3438f099&amp;id=0754b49e09" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+
         <table class="form">
             <tr>
                 <td>
                     <label for="newsletter_name">Name:</label>
                 </td><td>
-                    <input type="text" id="newsletter_name" name="newsletter_name" />
+                    <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+
                 </td>
             </tr>
             <tr>
                 <td>
                     <label for="newsletter_email">E-mail:</label>
                 </td><td>
-                    <input type="text" id="newsletter_email" name="newsletter_email" />
+                   <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="button" value="Submit!" />
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
                 </td>
             </tr>
         </table>
+        
+        </form>
+        
     </div>
 </div><!-- box_container -->
 
