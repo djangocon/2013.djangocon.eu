@@ -234,7 +234,7 @@ a {
 }
 
 .newsletter .form label,
-.newsletter .form input[type=text] {
+.newsletter .form input[type=text], .newsletter .form input[type=email] {
     line-height: 18px;
     background-color: #ececd1;
     padding: 12px 3px;
@@ -247,7 +247,7 @@ a {
     width: 60px;
 }
 
-.newsletter .form input[type=text] {
+.newsletter .form input[type=text], .newsletter .form input[type=email] {
     font-size: 14px;
     border: 0px;
     width: 268px; 
