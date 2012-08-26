@@ -68,6 +68,7 @@ a {
     width: 460px;
     padding-left: 20px;
     float: left;
+    padding-bottom: 20px;
 }
 
 /** about **/
@@ -192,6 +193,10 @@ a {
     margin-left: 64px;
     overflow: scroll;
     overflow-y: scroll;
+}
+
+.twitter .tweets a {
+    color: black;
 }
 
 .twitter .tweets .tweet {
