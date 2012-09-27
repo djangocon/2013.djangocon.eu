@@ -18,8 +18,13 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* Piotr Bulinski's styles for DjangoCircus */
 body {
     font-family: "Sansation", Verdana, sans-serif;
-    background:#fcfdf1 url('../img/bg.jpg') no-repeat left top;
-    overflow-x: hidden;
+    background:#fcfdf1 url('../img/bg_center.png') no-repeat center top;
+    line-height: 120%;
+}
+
+.wrapper {
+    width: 1280px;
+    margin:0px auto;
 }
 
 .header {
@@ -33,17 +38,19 @@ body {
 }
 
 .top_menu {
-    background:#172423 url('../img/bg_top.jpg') no-repeat 1040px top;
+    background:#172423;
     height: 57px;
     width: 100%;
-    padding-left: 410px;
     margin-bottom: 280px;
 }
+
 
 a {
     text-decoration: none;
 }
-
+.top_menu ul {
+    float: right;
+}
 .top_menu ul li {
     display: inline-block;
     font-size: 24px;
@@ -51,18 +58,16 @@ a {
     padding-top: 14px;
     padding-left: 30px;
 }
-.top_menu ul li:first-child {
-	margin-left: 450px;
-}
+
 
 .top_menu ul li a {
     color: #dad9a4;
 }
 
 .top_logo {
-    position: absolute;
-    left: 7px;
-    top: 5px;
+    position:absolute;
+    top: 20px;
+    margin-left: 20px;
 }
 
 .box_container {
@@ -102,8 +107,8 @@ a {
 
 /** location **/
 .location {
-    margin-top: 110px;
-    width: 400px;
+    margin-top: 70px;
+    width: 380px;
     margin-left: 20px;
 }
 
@@ -135,6 +140,7 @@ a {
 .networks {
     width: 400px;
     height: 120px;
+    margin-left: 40px;
 }
 
 .networks .network {
@@ -171,16 +177,17 @@ a {
 
 /** twitter **/
 .twitter {
-    background: url('../img/b_twitter.png') no-repeat;
+    background: url('../img/b_twitter_new.png') no-repeat;
     width: 437px;
-    height: 661px;
+    height: 702px;
+    margin-top:-30px;
 }
 
 .twitter .header {
     height: 67px;
     width: 330px;
     padding-top: 45px;
-    padding-left: 50px;
+    padding-left: 60px;
     text-align: center;
 }
 
@@ -190,12 +197,10 @@ a {
 
 .twitter .tweets {
     width: 320px;
-    height: 150px;
-    margin-top: 30px;
+    height: 220px;
+    margin-top: 6px;
     margin-left: 64px;
-    overflow: scroll;
-    overflow-y: scroll;
-    overflow-x: none;
+    overflow: hidden;
 }
 
 .twitter .tweets a {
@@ -205,7 +210,10 @@ a {
 .twitter .tweets .tweet {
     text-align: justify;
     border-bottom: 1px solid black;
-    padding: 10px 0px;
+    padding: 6px 0px;
+}
+.twitter .tweets:last-child {
+    border-bottom: none;
 }
 
 /** newsletter **/
@@ -260,9 +268,9 @@ a {
     width: 268px; 
 }
 
-.newsletter .form input[type=button] {
+.newsletter .form input[type=submit] {
     font-family: "RiotSquad", Impact, fantasy;
-    font-size: 30px;
+    font-size: 24px;
     background: url('../img/e_button.png') no-repeat;
     width: 152px;
     height: 49px;
