@@ -2,8 +2,11 @@
 <html>
 <head>
     <title>DjangoCon Europe 2013 - best Django community event.</title>
-    <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="js/networks.js" /></script>
+
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta name="google-site-verification" content="t7HLmwO2QDEbBFL7MKpOqoViw0eED7tolEtKRQtlMI8" />
     <meta name="keywords" CONTENT="" />
@@ -42,34 +45,35 @@
 
 </div><!-- box_container -->
 <div class="box_container">
-	<!--
     <div class="networks box">
         <div class="network">
-            <div class="counter">23</div>
+            <div class="counter google">0</div>
             <div class="icon google"></div>
+            <!--div class="g-plusone" data-href="http://2013.djangocon.eu"></div>
+            <script type="text/javascript">
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script-->
         </div>
         <div class="network">
-            <div class="counter">164</div>
-            <div class="icon facebook"></div>
+            <div class="counter facebook">0</div>
+            <a href="https://www.facebook.com/112412848774431" target="_blank"><div class="icon facebook"></div></a>
         </div>
         <div class="network">
-            <div class="counter">113</div>
-            <div class="icon twitter"></div>
+            <div class="counter twitter">0</div>
+            <a href="https://www.twitter.com/djangocon" target="_blank"><div class="icon twitter"></div></a>
         </div>
     </div>
-	-->
     <div class="twitter box">
         <div class="header">
             <span class="red">Follow</span> us on Twitter!<br/>
-            <span class="small">Recent <span class="red">@DjangoCon</span> feed:</span>
+            <span class="small">Recent <a href="https://twitter.com/djangocon" class="red" target="_blank">@DjangoCon</a> feed:</span>
         </div> 
 
-        <div class="tweets">
-            <div class="tweet">
-            Coming soon :)
-            </div>
-
-        </div>
+        <div class="tweets"></div>
     </div>
 
     <div class="newsletter box">
@@ -107,6 +111,17 @@
         
     </div>
 </div><!-- box_container -->
+
+<div class="popup">
+    <div class="header">Sample header title</div>
+    <div class="scrollable">
+        <div class="date red">24/12/12 @ 12:34</div>
+        <div class="content">
+            Some text<br/>
+        </div>
+        <div class="comments"></div>
+    </div>
+</div>
 
 </body>
 </html>

@@ -68,6 +68,7 @@ a {
     width: 460px;
     padding-left: 20px;
     float: left;
+    padding-bottom: 20px;
 }
 
 /** about **/
@@ -193,6 +194,11 @@ a {
     margin-left: 64px;
     overflow: scroll;
     overflow-y: scroll;
+    overflow-x: none;
+}
+
+.twitter .tweets a {
+    color: black;
 }
 
 .twitter .tweets .tweet {
@@ -262,4 +268,39 @@ a {
     border: none;
     cursor: pointer;
     margin-top: 5px;
+}
+
+.popup {
+
+    width: 843px;
+    height: 802px;
+    position: absolute;
+    left: 25px;
+    top: 295px;
+
+    padding-left: 60px;
+
+    background: url('../img/popup.png') no-repeat;
+}
+
+.popup .header {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.popup .scrollable {
+    width: 723px;
+    height: 690px;
+
+    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: none;
+}
+
+.popup .date {
+    text-align: right;
+}
+
+.popup .content {
+    padding-top: 20px;
 }

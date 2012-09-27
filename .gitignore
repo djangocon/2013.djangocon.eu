@@ -3,3 +3,4 @@ design.xcf
 venv
 *.pyc
 collected_static/*
+.idea/*
