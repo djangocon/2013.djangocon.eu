@@ -280,16 +280,11 @@ a {
 }
 
 .popup {
-
     width: 843px;
     height: 802px;
-    position: absolute;
-    left: 25px;
-    top: 295px;
-
     padding-left: 60px;
-
     background: url('../img/popup.png') no-repeat;
+    margin-bottom: 40px;
 }
 
 .popup .header {
