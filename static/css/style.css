@@ -313,3 +313,62 @@ a {
 .popup .content {
     padding-top: 20px;
 }
+
+
+@media screen and (max-width: 800px) {
+    body {
+        background-image: none;
+    }
+    .wrapper {
+        width:auto;
+    }
+    .top_menu {
+        width: auto;
+        padding-right: 10px;
+        font-size: 18px;
+        margin-bottom: 220px;
+    }
+    .top_menu .wrapper {
+        width: auto;
+    }
+
+    .top_menu ul {
+        display: none;
+    }
+
+    .about, .location {
+        margin-left:0px;
+    }
+    .about .body, .location .body {
+        padding: 0px 20px;
+    }
+    .about .footer {
+        width: auto;
+        margin-left: 20px;
+    }
+
+
+    .networks {
+        display:none;
+    }
+
+    .twitter {
+        display:none;
+    }
+    .box_container {
+        float:none;
+        max-width: 90%;
+        padding-left: 0px;
+    }
+    .newsletter {
+        margin-top:0px;
+        margin-left:-10px;
+        max-width: 90%;
+    }
+
+    img {
+        max-width: 90%;
+        height: auto;
+        margin: 0 auto;
+    }
+}
