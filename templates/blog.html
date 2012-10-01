@@ -1,9 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <title></title>
+    <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+    <link rel="shortcut icon" href="http://2013.djangocon.eu/static/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="http://2013.djangocon.eu/static/css/style.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="http://2013.djangocon.eu/static/js/background_scroll.js" /></script>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="google-site-verification" content="t7HLmwO2QDEbBFL7MKpOqoViw0eED7tolEtKRQtlMI8" />
+    {block:Description}
+        <!-- Description -->
+            <meta name="description" content="{MetaDescription}"/>
+    {/block:Description}
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    {block:PermalinkPage}
+        {block:Posts}
+            {block:Text}
+                <meta property="og:site_name" content="PolishStartupScene.com">
+                <meta property="og:title" content="{Title}">
+            {/block:Text}
+        {/block:Posts}
+    {/block:PermalinkPage}
+    <meta property="og:site_name" content="DjangoCon Europe 2013">
+    <meta property="og:title" content="{Title}">
+    <meta property="og:description" content="{MetaDescription}">
+
 </head>
 <body>
+    <div class="top_menu">
+        <div class="wrapper">
+            <ul>
+                <li><a href="mailto:hello@djangocircus.com">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <img src="http://2013.djangocon.eu/static/img/logo.png" alt="DjangoCon Europe Circus Edition" class="top_logo" />
 
+
+    {block:Posts}
+        {block:Text}
+            <div class="popup">
+                <div class="header"><a href="{Permalink}" class="read_more">{block:Title}{Title}{/block:Title}</a></div>
+                <div class="scrollable">
+                    <div class="date red">{block:Date}{Month} {DayOfMonth}, {Year} @ {Hour}:{Minute}{/block:Date}</div>
+                    <div class="content">
+                        {Body}
+                    </div>
+                    <div class="comments"></div>
+                </div>
+            </div>
+        {/block:Text}
+    {/block:Posts}
+
+    {block:Pagination}
+        <div id="pagination_post">
+            <div class="newer-page"><a href="{block:NextPage}{NextPage}{/block:NextPage}"></a></div>
+            <div class="older-page"><a href="{block:PreviousPage}{PreviousPage}{/block:PreviousPage}"></a></div>
+        </div>
+     {/block:Pagination}
+
+    </div>
 </body>
 </html>
