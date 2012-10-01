@@ -6,7 +6,8 @@ from django.views.generic.simple import direct_to_template
 
 urlpatterns = patterns('',
     # Examples:
-     url(r'^$', direct_to_template, {'template': 'index.html'}),
+    url(r'^$', direct_to_template, {'template': 'index.html'}),
+    url(r'^blog/$', direct_to_template, {'template': 'blog.html'}),
     # url(r'^djangocircus/', include('djangocircus.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

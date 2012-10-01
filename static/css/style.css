@@ -280,33 +280,41 @@ a {
 }
 
 .popup {
-    width: 843px;
-    height: 802px;
-    padding-left: 60px;
-    background: url('../img/popup.png') no-repeat;
+    width: 839px;
     margin-bottom: 40px;
+    line-height: 140%;
+}
+.popup p{
+    margin-bottom: 10px;
 }
 
 .popup .header {
-    padding-top: 20px;
-    padding-bottom: 30px;
+    height: 80px;
+    width: 764px;
+    background: url('../img/popup.png') no-repeat;
+    padding: 20px 30px 0 45px;
 }
-
-.popup .scrollable {
-    width: 723px;
-    height: 690px;
-
-    overflow: scroll;
-    overflow-y: scroll;
-    overflow-x: none;
+.popup .header .a, .popup .header .a:hover {
+    color: #000 !important;
 }
 
 .popup .date {
     text-align: right;
+    font-family: "Sansation", Verdana, sans-serif;
+    font-size: 16px;
+    margin-top:30px;
 }
-
 .popup .content {
-    padding-top: 20px;
+    background: white;
+    border-left: 14px solid black;
+    border-right: 6px solid black;
+    border-bottom: 6px solid black;
+    padding: 10px 25px 20px 25px;
+    margin-left:14px;
+    width: 749px;
+}
+.read_more {
+    color: #000;
 }
 
 

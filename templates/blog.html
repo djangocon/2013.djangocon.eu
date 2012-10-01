@@ -3,7 +3,7 @@
 <head>
     <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
     <link rel="shortcut icon" href="http://2013.djangocon.eu/static/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="http://2013.djangocon.eu/static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
     <script type="text/javascript" src="http://2013.djangocon.eu/static/js/background_scroll.js" /></script>
 
@@ -17,7 +17,7 @@
     {block:PermalinkPage}
         {block:Posts}
             {block:Text}
-                <meta property="og:site_name" content="PolishStartupScene.com">
+                <meta property="og:site_name" content="DjangoCon Europe 2013">
                 <meta property="og:title" content="{Title}">
             {/block:Text}
         {/block:Posts}
@@ -38,21 +38,45 @@
     <div class="wrapper">
         <img src="http://2013.djangocon.eu/static/img/logo.png" alt="DjangoCon Europe Circus Edition" class="top_logo" />
 
-
     {block:Posts}
         {block:Text}
-            <div class="popup">
-                <div class="header"><a href="{Permalink}" class="read_more">{block:Title}{Title}{/block:Title}</a></div>
-                <div class="scrollable">
-                    <div class="date red">{block:Date}{Month} {DayOfMonth}, {Year} @ {Hour}:{Minute}{/block:Date}</div>
-                    <div class="content">
-                        {Body}
-                    </div>
-                    <div class="comments"></div>
-                </div>
-            </div>
+    <div class="popup">
+        <div class="header">
+            <a href="{Permalink}" class="read_more">{block:Title}{Title}{/block:Title}</a>
+            <div class="date red">{block:Date}{Month} {DayOfMonth}, {Year} @ {Hour}:{Minute}{/block:Date}</div>
+        </div>
+        <div class="content">
+            {Body}
+            <p style="text-align:right;"><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></p>
+        </div>
+        <div class="comments">
+            <script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>{block:Permalink}<div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /**
+                 * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+                 */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://djangocircus.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=djangocircus">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+            {/block:Permalink}
+            <script type="text/javascript">
+                var disqus_shortname = 'djangocircus';
+                (function () {
+                    var s = document.createElement('script'); s.async = true;
+                    s.src = 'http://djangocircus.disqus.com/count.js';
+                    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                }());
+            </script>
+        </div>
+    </div>
         {/block:Text}
     {/block:Posts}
+
 
     {block:Pagination}
         <div id="pagination_post">
