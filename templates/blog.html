@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
     <script type="text/javascript" src="http://2013.djangocon.eu/static/js/background_scroll.js" /></script>
+    <script type="text/javascript" src="http://2013.djangocon.eu/static/js/networks.js" /></script>
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta name="google-site-verification" content="t7HLmwO2QDEbBFL7MKpOqoViw0eED7tolEtKRQtlMI8" />
@@ -14,20 +15,21 @@
             <meta name="description" content="{MetaDescription}"/>
     {/block:Description}
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    {block:PermalinkPage}
-        {block:Posts}
-            {block:Text}
-                <meta property="og:site_name" content="DjangoCon Europe 2013">
-                <meta property="og:title" content="{Title}">
-            {/block:Text}
-        {/block:Posts}
-    {/block:PermalinkPage}
+
     <meta property="og:site_name" content="DjangoCon Europe 2013">
     <meta property="og:title" content="{Title}">
     <meta property="og:description" content="{MetaDescription}">
-
+    {block:PermalinkPage}
+    {block:Posts}
+    {block:Text}
+    <meta property="og:site_name" content="DjangoCon Europe 2013">
+    <meta property="og:title" content="{Title}">
+    {/block:Text}
+    {/block:Posts}
+    {/block:PermalinkPage}
 </head>
 <body>
+    <div id="fb-root"></div>
     <div class="top_menu">
         <div class="wrapper">
             <ul>
@@ -36,43 +38,60 @@
         </div>
     </div>
     <div class="wrapper">
-        <img src="http://2013.djangocon.eu/static/img/logo.png" alt="DjangoCon Europe Circus Edition" class="top_logo" />
+        <a href="http://2013.djangocon.eu/"><img src="http://2013.djangocon.eu/static/img/logo.png" alt="DjangoCon Europe Circus Edition" class="top_logo" /></a>
+
+    <div class="networks" style="width:auto; height: auto; margin: -80px 0 0 500px; position:absolute;">
+        <div class="network">
+            <div class="counter facebook">0</div>
+            <a href="https://www.facebook.com/DjangoConEurope" target="_blank"><div class="icon facebook"></div></a>
+        </div>
+        <div class="network" style="margin-top:30px;">
+            <div class="counter twitter">0</div>
+            <a href="https://www.twitter.com/djangocon" target="_blank"><div class="icon twitter"></div></a>
+        </div>
+    </div>
 
     {block:Posts}
         {block:Text}
     <div class="popup">
         <div class="header">
             <a href="{Permalink}" class="read_more">{block:Title}{Title}{/block:Title}</a>
-            <div class="date red">{block:Date}{Month} {DayOfMonth}, {Year} @ {Hour}:{Minute}{/block:Date}</div>
+            <div class="date red">{block:Date}{Month} {DayOfMonth}, {Year}{/block:Date}</div>
         </div>
         <div class="content">
             {Body}
-            <p style="text-align:right;"><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></p>
+            <p style="margin-top:15px;">
+                <a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a>
+                <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="80" data-show-faces="false"></div>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-text="{Title} - DjangoCon Europe 2013" data-via="DjangoCon">Tweet</a>
+
+            </p>
+            <div class="comments">
+                <script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>{block:Permalink}<div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /**
+                     * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+                     */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = 'http://djangocircus.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=djangocircus">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+                {/block:Permalink}
+                <script type="text/javascript">
+                    var disqus_shortname = 'djangocircus';
+                    (function () {
+                        var s = document.createElement('script'); s.async = true;
+                        s.src = 'http://djangocircus.disqus.com/count.js';
+                        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                    }());
+                </script>
+            </div>
         </div>
-        <div class="comments">
-            <script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>{block:Permalink}<div id="disqus_thread"></div>
-            <script type="text/javascript">
-                /**
-                 * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
-                 */
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = 'http://djangocircus.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=djangocircus">comments powered by Disqus.</a></noscript>
-            <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-            {/block:Permalink}
-            <script type="text/javascript">
-                var disqus_shortname = 'djangocircus';
-                (function () {
-                    var s = document.createElement('script'); s.async = true;
-                    s.src = 'http://djangocircus.disqus.com/count.js';
-                    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-                }());
-            </script>
-        </div>
+
     </div>
         {/block:Text}
     {/block:Posts}
@@ -86,5 +105,27 @@
      {/block:Pagination}
 
     </div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/pl_PL/all.js#xfbml=1&appId=345022845576638";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-35218987-1']);
+        _gaq.push(['_setDomainName', 'djangocon.eu']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
 </body>
 </html>
