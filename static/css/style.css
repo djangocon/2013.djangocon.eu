@@ -323,15 +323,20 @@ a {
     body {
         background-image: none;
     }
+
     .wrapper {
-        width:auto;
+        width: auto;
+        max-width: 600px;
+
     }
+
     .top_menu {
         width: auto;
         padding-right: 10px;
         font-size: 18px;
-        margin-bottom: 220px;
+        margin-bottom: 260px;
     }
+
     .top_menu .wrapper {
         width: auto;
     }
@@ -340,34 +345,69 @@ a {
         display: none;
     }
 
-    .about, .location {
-        margin-left:0px;
+    .about {
+        margin-top: 70px;
     }
-    .about .body, .location .body {
-        padding: 0px 20px;
+
+    .about, .location, .newsletter {
+        margin-left: 0;
+        width: 100%;
     }
+    .about .body, .location .body, .newsletter .body {
+        padding: 0 20px;
+    }
+
+    .about .header, .location .header, .newsletter .header {
+        width: 95%;
+    }
+
     .about .footer {
         width: auto;
         margin-left: 20px;
     }
 
-
-    .networks {
-        display:none;
+    .networks, .twitter {
+        display: none;
     }
 
-    .twitter {
-        display:none;
-    }
     .box_container {
-        float:none;
+        float: none;
+        width: auto;
         max-width: 90%;
-        padding-left: 0px;
+        padding-left: 0;
+        margin: auto;
     }
+
     .newsletter {
-        margin-top:0px;
-        margin-left:-10px;
-        max-width: 90%;
+        margin-top: 0;
+        background: none;
+    }
+
+    .newsletter .body {
+        margin: auto;
+        width: auto;
+        padding: 0 20px;
+    }
+
+    .newsletter .form {
+        margin: auto;
+        width: 100%;
+    }
+
+
+    .newsletter .form .label {
+        width: 60px;
+    }
+
+    .newsletter .form input[type="text"],
+    .newsletter .form input[type="email"]
+    {
+        width: 100%;
+    }
+
+    .location .map {
+        width: auto;
+        background: none;
     }
 
     img {
