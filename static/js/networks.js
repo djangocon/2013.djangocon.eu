@@ -14,7 +14,7 @@ function set_twitter() {
     });
 
     $.getJSON(tw_tl_url, function(data){
-        var tweet;
+        var i, tweet;
         for(i=0; i < 3; i++) {
             tweet = '<a target="_blank" href="https://twitter.com/djangocon/status/' +
                     data[i].id_str + '"><div class="tweet">' + 
