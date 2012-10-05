@@ -93,7 +93,6 @@ a {
 }
 
 .about .body {
-    text-align: justify;
     padding-left: 44px;
     padding-right: 10px;
 }
@@ -122,7 +121,6 @@ a {
 }
 
 .location .body {
-    text-align: justify;
     padding-left: 44px;
     padding-right: 10px;
 }
@@ -209,9 +207,8 @@ a {
 }
 
 .twitter .tweets .tweet {
-    text-align: justify;
     border-bottom: 1px solid black;
-    padding: 6px 0px;
+    padding: 6px 0;
 }
 .twitter .tweets:last-child {
     border-bottom: none;
@@ -236,7 +233,6 @@ a {
 .newsletter .body {
     margin-left: 42px;
     width: 340px;
-    text-align: justify;
 }
 
 .newsletter .form {
