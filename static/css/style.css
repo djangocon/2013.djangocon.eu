@@ -18,13 +18,13 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* Piotr Bulinski's styles for DjangoCircus */
 body {
     font-family: "Sansation", Verdana, sans-serif;
-    background:#fcfdf1 url('../img/bg_center.png') no-repeat center top;
+    background: #fcfdf1 url('../img/bg_center.jpg') no-repeat center top;
     line-height: 120%;
 }
 
 .wrapper {
     width: 1280px;
-    margin:0px auto;
+    margin: 0 auto;
 }
 
 .header {
@@ -161,7 +161,7 @@ a {
 .networks .network .icon {
     margin: 7px 12px;
     width: 39px;
-    height: 37px; 
+    height: 37px;
 }
 
 .icon.google {
@@ -266,7 +266,7 @@ a {
 .newsletter .form input[type=text], .newsletter .form input[type=email] {
     font-size: 14px;
     border: 0px;
-    width: 268px; 
+    width: 268px;
 }
 
 .newsletter .form input[type=submit] {
