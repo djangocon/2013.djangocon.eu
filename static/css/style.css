@@ -41,9 +41,16 @@ body {
     background:#172423;
     height: 57px;
     width: 100%;
-    margin-bottom: 280px;
+    position: absolute;
+    top: 0;
+
 }
 
+.logo_wrapper {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 a {
     text-decoration: none;
@@ -66,9 +73,8 @@ a {
 }
 
 .top_logo {
-    position:absolute;
-    top: 20px;
     margin-left: 20px;
+    position: relative;
 }
 
 .box_container {
@@ -327,10 +333,7 @@ a {
     }
 
     .top_menu {
-        width: auto;
-        padding-right: 10px;
         font-size: 18px;
-        margin-bottom: 260px;
     }
 
     .top_menu .wrapper {
@@ -341,8 +344,8 @@ a {
         display: none;
     }
 
-    .about {
-        margin-top: 70px;
+    .about, .location {
+        margin-top: 2em;
     }
 
     .about, .location, .newsletter {
@@ -402,6 +405,8 @@ a {
     }
 
     .location .map {
+        margin-bottom: 1em;
+        height: auto;
         width: auto;
         background: none;
     }
@@ -420,4 +425,11 @@ a {
 .fb-like {
     float: left;
     margin-right: 15px;
+}
+
+
+@media screen and (max-width: 400px) {
+    .header {
+        font-size: 24px;
+    }
 }
