@@ -18,13 +18,13 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* Piotr Bulinski's styles for DjangoCircus */
 body {
     font-family: "Sansation", Verdana, sans-serif;
-    background:#fcfdf1 url('../img/bg_center.png') no-repeat center top;
+    background: #fcfdf1 url('../img/bg_center.jpg') no-repeat center top;
     line-height: 120%;
 }
 
 .wrapper {
-    width: 1280px;
-    margin:0px auto;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 .header {
@@ -41,9 +41,16 @@ body {
     background:#172423;
     height: 57px;
     width: 100%;
-    margin-bottom: 280px;
+    position: absolute;
+    top: 0;
+
 }
 
+.logo_wrapper {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 a {
     text-decoration: none;
@@ -66,9 +73,8 @@ a {
 }
 
 .top_logo {
-    position:absolute;
-    top: 20px;
     margin-left: 20px;
+    position: relative;
 }
 
 .box_container {
@@ -93,7 +99,6 @@ a {
 }
 
 .about .body {
-    text-align: justify;
     padding-left: 44px;
     padding-right: 10px;
 }
@@ -122,7 +127,6 @@ a {
 }
 
 .location .body {
-    text-align: justify;
     padding-left: 44px;
     padding-right: 10px;
 }
@@ -161,7 +165,7 @@ a {
 .networks .network .icon {
     margin: 7px 12px;
     width: 39px;
-    height: 37px; 
+    height: 37px;
 }
 
 .icon.google {
@@ -209,9 +213,8 @@ a {
 }
 
 .twitter .tweets .tweet {
-    text-align: justify;
     border-bottom: 1px solid black;
-    padding: 6px 0px;
+    padding: 6px 0;
 }
 .twitter .tweets:last-child {
     border-bottom: none;
@@ -236,7 +239,6 @@ a {
 .newsletter .body {
     margin-left: 42px;
     width: 340px;
-    text-align: justify;
 }
 
 .newsletter .form {
@@ -266,7 +268,7 @@ a {
 .newsletter .form input[type=text], .newsletter .form input[type=email] {
     font-size: 14px;
     border: 0px;
-    width: 268px; 
+    width: 268px;
 }
 
 .newsletter .form input[type=submit] {
@@ -323,15 +325,17 @@ a {
     body {
         background-image: none;
     }
+
     .wrapper {
-        width:auto;
-    }
-    .top_menu {
         width: auto;
-        padding-right: 10px;
-        font-size: 18px;
-        margin-bottom: 220px;
+        max-width: 600px;
+
     }
+
+    .top_menu {
+        font-size: 18px;
+    }
+
     .top_menu .wrapper {
         width: auto;
     }
@@ -341,33 +345,70 @@ a {
     }
 
     .about, .location {
-        margin-left:0px;
+        margin-top: 2em;
     }
-    .about .body, .location .body {
-        padding: 0px 20px;
+
+    .about, .location, .newsletter {
+        margin-left: 0;
+        width: 100%;
     }
+    .about .body, .location .body, .newsletter .body {
+        padding: 0 20px;
+    }
+
+    .about .header, .location .header, .newsletter .header {
+        width: 95%;
+    }
+
     .about .footer {
         width: auto;
         margin-left: 20px;
     }
 
-
-    .networks {
-        display:none;
+    .networks, .twitter {
+        display: none;
     }
 
-    .twitter {
-        display:none;
-    }
     .box_container {
-        float:none;
+        float: none;
+        width: auto;
         max-width: 90%;
-        padding-left: 0px;
+        padding-left: 0;
+        margin: auto;
     }
+
     .newsletter {
-        margin-top:0px;
-        margin-left:-10px;
-        max-width: 90%;
+        margin-top: 0;
+        background: none;
+    }
+
+    .newsletter .body {
+        margin: auto;
+        width: auto;
+        padding: 0 20px;
+    }
+
+    .newsletter .form {
+        margin: auto;
+        width: 100%;
+    }
+
+
+    .newsletter .form .label {
+        width: 60px;
+    }
+
+    .newsletter .form input[type="text"],
+    .newsletter .form input[type="email"]
+    {
+        width: 100%;
+    }
+
+    .location .map {
+        margin-bottom: 1em;
+        height: auto;
+        width: auto;
+        background: none;
     }
 
     img {
@@ -384,4 +425,11 @@ a {
 .fb-like {
     float: left;
     margin-right: 15px;
+}
+
+
+@media screen and (max-width: 400px) {
+    .header {
+        font-size: 24px;
+    }
 }
