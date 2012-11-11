@@ -8,6 +8,8 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', direct_to_template, {'template': 'index.html'}),
     url(r'^blog/$', direct_to_template, {'template': 'blog.html'}),
+    #url(r'^team/$', direct_to_template, {'template': 'team.html'}),
+    url(r'^speakers/$', direct_to_template, {'template': 'speakers.html'}),
     # url(r'^djangocircus/', include('djangocircus.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

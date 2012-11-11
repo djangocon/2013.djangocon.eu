@@ -4,7 +4,9 @@
     <title>DjangoCon Europe 2013 - best Django community event.</title>
     <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" />
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/background_scroll.js" ></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/networks.js" ></script>
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -18,110 +20,163 @@
     <div class="wrapper">
         <ul>
             <li><a href="http://blog.djangocircus.com/">Blog</a></li>
+            <li><a href="/speakers/">Speakers</a></li>
+            <li><a href="/static/pdf/Sponsorship.pdf">Sponsorships</a></li>
             <li><a href="mailto:hello@djangocircus.com">Contact</a></li>
         </ul>
     </div>
 </div>
 <div class="wrapper">
   <div class="logo_wrapper">
-    <img src="{{ STATIC_URL }}img/logo.png" alt="DjangoCon Europe Circus Edition" class="top_logo" />
+    <a href="/"><img src="{{ STATIC_URL }}img/logo.png" alt="DjangoCon Europe Circus Edition" class="top_logo" /></a>
   </div>
-<div class="box_container">
-    <div class="about box">
-        <div class="header">
-            What's Django Circus?
-        </div>
+  {% block content %}
+    <div class="box_container">
+        <div class="about box">
+            <div class="header">
+                What's Django Circus?
+            </div>
 
-        <div class="body">DjangoCon Europe 2013, the best Django community event ever is on again! <b>This time we've decided to put some more magic and came up with this crazy idea of throwing a fun Django conference in a real CIRCUS.</b> Wonderful speakers, lovely city of Warsaw and amazing Django community. Ladies and Gentlemen, Children of all Ages, Welcome to the Greatest Show on Earth! <a href="http://blog.djangocircus.com/">See our blog for more news</a>.</div>
+            <div class="body">DjangoCon Europe 2013, the best Django community event ever is on again! <b>This time we've decided to put some more magic and came up with this crazy idea of throwing a fun Django conference in a real CIRCUS.</b> Wonderful speakers, lovely city of Warsaw and amazing Django community. Ladies and Gentlemen, Children of all Ages, Welcome to the Greatest Show on Earth! <a href="http://blog.djangocircus.com/">See our blog for more news</a>.</div>
 
-        <div class="footer"></div>
-    </div><!-- about -->
+            <div class="footer"></div>
+        </div><!-- about -->
 
-    <div class="location box">
-        <div class="header">
-            Warsaw, May 2013
-        </div>
+        <div class="location box">
+            <div class="header">
+                Warsaw, May 2013
+            </div>
 
-        <div class="body">We're really happy to host you in Warsaw, Poland and make this place your home for a few days in May 2013. We're still looking for a perfect, green and calm place for our crazy circus, so we'll update you as soon as we find one.</div>
+            <div class="body">We're really happy to host you in Warsaw, Poland and make this place your home for a few days in May 2013. We're still looking for a perfect, green and calm place for our crazy circus, so we'll update you as soon as we find one.</div>
 
-        <div class="map">
-            <a href="http://goo.gl/maps/N0G2g"><img src="{{ STATIC_URL }}img/map.png" alt="location map" /></a>
-        </div>
-    </div><!-- location -->
+            <div class="map">
+                <a href="http://goo.gl/maps/N0G2g"><img src="{{ STATIC_URL }}img/map.png" alt="location map" /></a>
+            </div>
+        </div><!-- location -->
 
-</div><!-- box_container -->
-<div class="box_container">
-    <div class="networks box">
-        <!--
-        <div class="network">
-            <div class="counter google">0</div>
-            <div class="icon google"></div>
-            <!--div class="g-plusone" data-href="http://2013.djangocon.eu"></div>
-            <script type="text/javascript">
-              (function() {
-                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                po.src = 'https://apis.google.com/js/plusone.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-              })();
-            </script-->
+    </div><!-- box_container -->
+    <div class="box_container">
+        <div class="networks box">
             <!--
+            <div class="network">
+                <div class="counter google">0</div>
+                <div class="icon google"></div>
+                <!--div class="g-plusone" data-href="http://2013.djangocon.eu"></div>
+                <script type="text/javascript">
+                  (function() {
+                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                    po.src = 'https://apis.google.com/js/plusone.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                  })();
+                </script-->
+                <!--
+            </div>
+            -->
+            <div class="network">
+                <div class="counter facebook">0</div>
+                <a href="https://www.facebook.com/DjangoConEurope" target="_blank"><div class="icon facebook"></div></a>
+            </div>
+            <div class="network" style="margin-top:30px;">
+                <div class="counter twitter">0</div>
+                <a href="https://www.twitter.com/djangocon" target="_blank"><div class="icon twitter"></div></a>
+            </div>
         </div>
-        -->
-        <div class="network">
-            <div class="counter facebook">0</div>
-            <a href="https://www.facebook.com/DjangoConEurope" target="_blank"><div class="icon facebook"></div></a>
+        <div class="twitter box">
+            <div class="header">
+                <span class="red">Follow</span> us on Twitter!<br/>
+                <span class="small">Recent <a href="https://twitter.com/djangocon" class="red" target="_blank">@DjangoCon</a> feed:</span>
+            </div>
+
+            <div class="tweets"></div>
         </div>
-        <div class="network" style="margin-top:30px;">
-            <div class="counter twitter">0</div>
-            <a href="https://www.twitter.com/djangocon" target="_blank"><div class="icon twitter"></div></a>
+
+        <div class="newsletter box">
+            <div class="header">Newsletter</div>
+            <div class="body">
+                Leave us your email so we can keep you posted!    </div>
+
+
+            <form action="http://djangocircus.us5.list-manage.com/subscribe/post?u=b2911be76638dbf5e3438f099&amp;id=0754b49e09" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+
+            <table class="form">
+                <tr>
+                    <td class="label">
+                        <label for="newsletter_name">Name:</label>
+                    </td><td>
+                        <input type="text" value="" name="FNAME" class="required" id="newsletter_name">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">
+                        <label for="newsletter_email">E-mail:</label>
+                    </td><td>
+                       <input type="email" value="" name="EMAIL" class="required email" id="newsletter_email">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                    </td>
+                </tr>
+            </table>
+
+            </form>
+
+        </div>
+    </div><!-- box_container -->
+    <div style="clear:both;"></div>
+    <div id="speakers">
+        <a href="/speakers/#russel">
+        <div>
+            <img src="{{ STATIC_URL }}img/speakers_russelkeithmagee.png" />
+            <h4>Russel Keith-Magee</h4>
+            <span>Antipode</span>
+        </div>
+        </a>
+        <a href="/speakers/#craig">
+        <div>
+            <img src="{{ STATIC_URL }}img/speakers_craigheroku.png" />
+            <h4>Craig Kerstiens</h4>
+            <span>Heroku</span>
+        </div>
+        </a>
+        <a href="/speakers/#andrew">
+        <div>
+            <img src="{{ STATIC_URL }}img/speakers_andrewgodin.png" />
+            <h4>Andrew Godwin</h4>
+            <span>Rigger</span>
+        </div>
+        </a>
+        <div>
+            <img src="{{ STATIC_URL }}img/speakers_you.png" />
+            <h4>Call for papers <br />starts soon!</h4>
+            <span></span>
         </div>
     </div>
-    <div class="twitter box">
+
+    <div style="clear:both;"></div>
+
+    <a href="/static/pdf/Sponsorship.pdf"><img src="{{ STATIC_URL }}img/sponsorship_opportunities.png" class="sponsorship_opportunities"></a>
+
+    <div style="clear:both;"></div>
+
+    <!--
+    <div id="sponsors">
         <div class="header">
-            <span class="red">Follow</span> us on Twitter!<br/>
-            <span class="small">Recent <a href="https://twitter.com/djangocon" class="red" target="_blank">@DjangoCon</a> feed:</span>
-        </div> 
+            <a href="#" class="read_more">Sponsors</a>
+        </div>
+        <div class="content">
 
-        <div class="tweets"></div>
+        </div>
+
     </div>
-
-    <div class="newsletter box">
-        <div class="header">Newsletter</div>
-        <div class="body">
-            Leave us your email so we can keep you posted!    </div>
-           
-        
-        <form action="http://djangocircus.us5.list-manage.com/subscribe/post?u=b2911be76638dbf5e3438f099&amp;id=0754b49e09" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-
-        <table class="form">
-            <tr>
-                <td class="label">
-                    <label for="newsletter_name">Name:</label>
-                </td><td>
-                    <input type="text" value="" name="FNAME" class="required" id="newsletter_name">
-
-                </td>
-            </tr>
-            <tr>
-                <td class="label">
-                    <label for="newsletter_email">E-mail:</label>
-                </td><td>
-                   <input type="email" value="" name="EMAIL" class="required email" id="newsletter_email">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                </td>
-            </tr>
-        </table>
-        
-        </form>
-        
-    </div>
-</div><!-- box_container -->
+    -->
+    {% endblock content %}
 
 </div>
+
+
 
 <script type="text/javascript">
 

@@ -1,7 +1,7 @@
 function start_backgroundscroll(){
     $(window).scroll(function () {
-        if ($(window).scrollTop() > 57){
-            $('body').css('background-position', 'center '+($(window).scrollTop()-57).toString()+"px")
+        if ($(window).scrollTop() > 650){
+            $('body').css('background-position', 'center '+($(window).scrollTop()-650).toString()+"px")
 
         }
     });
