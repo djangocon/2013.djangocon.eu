@@ -1,36 +1,48 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<div id="team">
-    <div class="popup">
-        <div class="header">Ola Sitarska</div>
-        <div class="content">
-            <p>
-            <img src="{{ STATIC_URL }}img/team/ola.png" />
-            Cupcake ipsum dolor sit amet applicake topping wafer sesame snaps. I love jelly-o halvah. Caramels bear claw marshmallow dragée gummi bears. Candy canes caramels cupcake cupcake marzipan I love I love lemon drops. Gingerbread I love wafer marzipan. Wypas topping cupcake I love cookie jelly-o biscuit tart biscuit. Sugar plum gummi bears croissant.
-            Chocolate bar biscuit lemon drops jelly-o dragée tiramisu sesame snaps dessert tiramisu. Wafer tiramisu I love. Dragée chupa chups cake. Fruitcake candy wypas. Gummi bears cookie l
-            </p>
-        </div>
+
+<div class="about box">
+    <div class="header">
+        Meet the Team
     </div>
-    <div class="popup">
-        <div class="header">Ola Sitarska</div>
-        <div class="content">
-            <p>
-                <img src="{{ STATIC_URL }}img/team/ola.png" />
-                Cupcake ipsum dolor sit amet applicake topping wafer sesame snaps. I love jelly-o halvah. Caramels bear claw marshmallow dragée gummi bears. Candy canes caramels cupcake cupcake marzipan I love I love lemon drops. Gingerbread I love wafer marzipan. Wypas topping cupcake I love cookie jelly-o biscuit tart biscuit. Sugar plum gummi bears croissant.
-                Chocolate bar biscuit lemon drops jelly-o dragée tiramisu sesame snaps dessert tiramisu. Wafer tiramisu I love. Dragée chupa chups cake. Fruitcake candy wypas. Gummi bears cookie l
-            </p>
+
+    <div id="speakers">
+        <a href="/team/#olasitarska">
+        <div>
+            <img src="{{ STATIC_URL }}img/team_ola.png" />
+            <h4>Ola Sitarska</h4>
+            <span><a href="http://twitter.com/olasitarska">@olasitarska</a></span>
         </div>
-    </div>
-    <div class="popup">
-        <div class="header">Ola Sitarska</div>
-        <div class="content">
-            <p>
-                <img src="{{ STATIC_URL }}img/team/ola.png" />
-                Cupcake ipsum dolor sit amet applicake topping wafer sesame snaps. I love jelly-o halvah. Caramels bear claw marshmallow dragée gummi bears. Candy canes caramels cupcake cupcake marzipan I love I love lemon drops. Gingerbread I love wafer marzipan. Wypas topping cupcake I love cookie jelly-o biscuit tart biscuit. Sugar plum gummi bears croissant.
-                Chocolate bar biscuit lemon drops jelly-o dragée tiramisu sesame snaps dessert tiramisu. Wafer tiramisu I love. Dragée chupa chups cake. Fruitcake candy wypas. Gummi bears cookie l
-            </p>
+        </a>
+        <a href="/team/#agata">
+        <div>
+            <img src="{{ STATIC_URL }}img/team_agata.png" />
+            <h4>Agata Radzińska</h4>
+            <span><a href="http://twitter.com/agatrra">@agatrra</a></span>
         </div>
+        </a>
+        <a href="/team/#olasendecka">
+        <div>
+            <img src="{{ STATIC_URL }}img/team_olas.png" />
+            <h4>Ola Sendecka</h4>
+            <span><a href="http://twitter.com/asendecka">@asendecka</a></span>
+        </div>
+        </a>
+        <a href="/team/#kuba">
+            <div>
+                <img src="{{ STATIC_URL }}img/team_kuba.png" />
+                <h4>Kuba Kucharski</h4>
+                <span><a href="http://twitter.com/83tb">@83tb</a></span>
+            </div>
+        </a>
+        <a href="/team/#tomek">
+        <div>
+            <img src="{{ STATIC_URL }}img/team_tomek.png" />
+            <h4>Tomek Paczkowski</h4>
+            <span><a href="http://twitter.com/oinopion">@oinopion</a></span>
+        </div>
+        </a>
     </div>
 </div>
 {% endblock content %}

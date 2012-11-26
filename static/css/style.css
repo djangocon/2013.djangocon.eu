@@ -37,6 +37,15 @@ body {
     font-size: 20px;
 }
 
+h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin:20px 0 10px;
+}
+b, strong {
+    font-weight: bold;
+}
+
 .top_menu {
     background:#172423;
     height: 57px;
