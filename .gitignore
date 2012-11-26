@@ -4,3 +4,5 @@ venv
 *.pyc
 collected_static/*
 .idea/*
+.project
+.pydevproject
