@@ -1,4 +1,4 @@
-django_circus
-=============
+DjangoCon Europe 2013
+==============
 
-Django Circus Website
+There are open sourced materials we use to organise DjangoCon Europe 2013 conference. Feel free to use it to make your conference more awesome :)
