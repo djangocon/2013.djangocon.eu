@@ -2,14 +2,13 @@
     font-family: "Sansation";
     font-style: normal;
     font-weight: normal;
-    src: url("sansation/Sansation_Regular.ttf") format("truetype");
+    src: url("../font/Sansation_Regular.ttf") format("truetype");
 }
-
 @font-face {
     font-family: "RiotSquad";
     font-style: normal;
     font-weight: normal;
-    src: url("RiotSquadNF.ttf") format("truetype");
+    src: url("../font/RiotSquadNF.ttf") format("truetype");
 }
 
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
