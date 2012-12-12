@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 
 {% block title %}
-	<title>DjangoCon Europe 2013 - Speakers</title>
+    <title xmlns="http://www.w3.org/1999/html">DjangoCon Europe 2013 - Speakers</title>
 {% endblock title %}
 
 {% block metadescription %}
@@ -46,6 +46,7 @@
                 <div style="clear:both;"></div>
             </div>
         </div>
+
         <div class="popup" id="jeff">
             <div class="header">Jeff Lindsay</div>
             <div class="content">
@@ -58,5 +59,73 @@
                 <div style="clear:both;"></div>
             </div>
         </div>
+
+
+        <div class="popup" id="lynn">
+            <div class="header">Lynn Root</div>
+            <div class="content">
+                <p>
+                    <img src="{{ STATIC_URL }}img/speakers_lynn-root.png" alt="Lynn Root" />
+                <p class="circusrole">Circus role: Grenade thrower</p>
+                Lynn Root is an engineer for Red Hat on the freeIPA team, known for breaking VMs & OpenShift, and being loud about it.  She is the founder & leader of PyLadies San Francisco, and the de facto missionary for the PyLadies word.  Lastly, she has an unhealthy obsession for coffee, twitter, and socializing.
+                </p>
+                <p><a href="http://twitter.com/roguelynn"><img src="{{ STATIC_URL }}img/i_t.png" /></a></p>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+
+        <div class="popup" id="kenneth">
+            <div class="header">Kenneth Reitz</div>
+            <div class="content">
+                <p>
+                    <img src="{{ STATIC_URL }}img/speakers_kenneth-reitz.png" alt="Kenneth Reitz" />
+                <p class="circusrole">Circus role: Uniformist</p>
+                Kenneth Reitz is the product owner of Python at Heroku and a member of the Python Software Foundation. He embraces minimalism, elegant architecture, and simple interfaces.
+                Kenneth is well known for his many <A HREF="http://kennethreitz.com/pages/open-projects.html">open source projects</A>, specifically <A href="http://python-requests.org/">Requests</A>.</p>
+
+                <p><a href="http://twitter.com/kennethreitz"><img src="{{ STATIC_URL }}img/i_t.png" /></a></p>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+
+        <div class="popup" id="Rob">
+            <div class="header">Rob Spectre</div>
+            <div class="content">
+                <p>
+                    <img src="{{ STATIC_URL }}img/speakers_robspectre.png" alt="Rob Spectre" />
+                <p class="circusrole">Circus role: Sideshow Barker</p>
+                Rob Spectre is a punk rock technolologist having a barrel of monkeys on the Internet.
+                Doing just about anything for a good laugh, Rob runs developer evangelism for Twilio and is an ardent supporter of open source software and creative commons art, the startup scene in New York, and every professional sports club from Boston.  Having previously served in network and software engineering roles for SugarCRM and Boxee, he is a growth startup veteran coming up on his first decade in early stage tech. In addition to writing on Brookyn Hacker, Rob runs a number of exploits into Internet ridiculousness, including the heartwarming documentary service how i knew you were the one, the robotic telephonic joke machine Laugh-o-Tron, and the Nobel Prize-losing Chrome Extension Jeter Filter.
+                Living and working in Brooklyn, Rob loves laughing, writing and failing to act his age by staying out of the most pit.
+                </p>
+                <p><a href="http://twitter.com/dN0t"><img src="{{ STATIC_URL }}img/i_t.png" /></a></p>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+
+        <div class="popup" id="Rob">
+            <div class="header">Steve Holden</div>
+            <div class="content">
+                <p>
+                    <img src="{{ STATIC_URL }}img/speakers_steve-holden.png" alt="Steve Holden" />
+                <p class="circusrole">Circus role: Magician</p>
+                Steve Holden is known throughout the Python and Django worlds as a stimulating speaker with a broad knowledge of computing generally and Python in particular.
+                Steve has been on the board of the Python Software Foundation since 2004,
+                and served four years as the Foundation's chairman. His latest venture,
+                The Open Bastion, produces technical events and conferences including <A href="http://djangocon.us/">DjangoCon US</A>,
+                 <A href="http://apachecon.eu/">ApacheCon US</A>,  <A href="http://collab12.cloudstack.org/">Cloudstack Collaboration Conference</A>
+                and <A href="http://na.apachecon.com/">ApacheCon NA</A>.
+
+                </p>
+                <p><a href="http://twitter.com/holdenweb"><img src="{{ STATIC_URL }}img/i_t.png" /></a></p>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+
+
     </div>
 {% endblock content %}
