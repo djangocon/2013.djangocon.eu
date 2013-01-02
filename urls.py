@@ -5,11 +5,11 @@ import settings
 
 
 urlpatterns = patterns('',
-    url(r'^$', TemplateView.as_view(template_name='index.html'),
-    url(r'^blog/$', TemplateView.as_view(template_name='blog.html'),
-    url(r'^team/$', TemplateView.as_view(template_name='team.html'),
-    url(r'^codeofconduct/$', TemplateView.as_view(template_name='codeofconduct.html'),
-    url(r'^speakers/$', TemplateView.as_view(template_name='speakers.html'),
+    url(r'^$', TemplateView.as_view(template_name='index.html')),
+    url(r'^blog/$', TemplateView.as_view(template_name='blog.html')),
+    url(r'^team/$', TemplateView.as_view(template_name='team.html')),
+    url(r'^codeofconduct/$', TemplateView.as_view(template_name='codeofconduct.html')),
+    url(r'^speakers/$', TemplateView.as_view(template_name='speakers.html')),
 
 )
 
