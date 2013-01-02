@@ -1,19 +1,16 @@
 from django.conf.urls import patterns, include, url
-from django.views.generic.simple import direct_to_template
+from django.views.generic import TemplateView
 import settings
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+
+
 
 urlpatterns = patterns('',
-    # Examples:
-    url(r'^$', direct_to_template, {'template': 'index.html'}),
-    url(r'^blog/$', direct_to_template, {'template': 'blog.html'}),
-    url(r'^team/$', direct_to_template, {'template': 'team.html'}),
-    url(r'^codeofconduct/$', direct_to_template, {'template': 'codeofconduct.html'}),
-    url(r'^speakers/$', direct_to_template, {'template': 'speakers.html'}),
-    
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', TemplateView.as_view(template_name='index.html')),
+    url(r'^blog/$', TemplateView.as_view(template_name='blog.html')),
+    url(r'^team/$', TemplateView.as_view(template_name='team.html')),
+    url(r'^codeofconduct/$', TemplateView.as_view(template_name='codeofconduct.html')),
+    url(r'^speakers/$', TemplateView.as_view(template_name='speakers.html')),
+
 )
 
 if not settings.DEBUG:
