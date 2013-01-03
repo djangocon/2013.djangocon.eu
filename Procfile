@@ -1,1 +1,1 @@
-web: python manage.py runserver 0.0.0.0:$PORT --noreload
+web: python manage.py run_gunicorn --preload -b 0.0.0.0:$PORT -t 90
