@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
-from import_export.admin import ImportExportMixin
 from vote.models import *
 
-class EntryAdmin(ImportExportMixin, admin.ModelAdmin):
+class EntryAdmin(admin.ModelAdmin):
     list_display = ['topic', 'description','score']
     search_fields = ['topic', 'description']
 
