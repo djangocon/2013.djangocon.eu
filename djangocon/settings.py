@@ -128,6 +128,7 @@ INSTALLED_APPS = (
     'south',
     'social_auth',
     'raven.contrib.django',
+    'import_export',
 
     'vote',
 )
