@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+{% load url from future %}
+{% load vote_tags %}
+
+{% block content %}
+
+<div class="popup" id="cfp">
+    <div class="header">
+       Call for Papers - voting
+    </div>
+    <div class="content">
+    	{% if not request.user.is_authenticated %}
+			<p id="signin">
+				Welcome to the DjangoCon Call for Papers voting! We're more than happy to present you 75 excellent submission to vote on. Every Django community member is welcome to vote and choose the best talks to be presented at DjangoCon on 15-17th May. We're looking for 15 great, diverse and inspiring speeches. In order to vote, please indentify yourself by signing in with your Github account.
+
+				{% for backend in social_auth.backends %}
+					<a href="{% url 'socialauth_begin' backend %}?{{ redirect_querystring }}" class="github_login">
+						<center><img src="{{ STATIC_URL }}img/signin_github.png" /></center>
+					</a>
+				{% endfor %}
+			</p>
+
+			<h2>Proposals:</h2>
+		{% endif %}
+
+		{% for entry in entries %}
+
+			<div class="entry" data-id="{{ entry.id }}">
+				<div class="baloon_counter">{{ entry.score }}</div>
+
+				<h4>{{ entry.topic }}</h4>
+
+				<p>{{ entry.description|linebreaks|urlize }}
+
+				<p class="vote_buttons">
+					{% if entry|voted_by_user:request.user %}
+						{% with vote=entry|voted_by_user:request.user %}
+							You already voted for {{ vote.get_kind_display }}. <a href="javascript:void(0);" class="cancel" data-kind="{{ vote.kind }}" data-id="{{ vote.id }}">Cancel your vote?</a>
+						{% endwith %}
+					{% else %}
+						<a href="javascript:void(0);" class="vote" data-id="{{ entry.id }}" data-kind="2"><img src="{{ STATIC_URL }}img/vote_button_1.png" /></a>
+						<a href="javascript:void(0);" class="vote" data-id="{{ entry.id }}" data-kind="1"><img src="{{ STATIC_URL }}img/vote_button_2.png" /></a>
+						<a href="javascript:void(0);" class="vote" data-id="{{ entry.id }}" data-kind="0"><img src="{{ STATIC_URL }}img/vote_button_3.png" /></a>
+					{% endif %}
+				</p>
+
+			</div>
+
+
+		{% endfor %}
+
+		<div style="clear:both;"></div>
+	</div>
+</div>
+{% endblock %}

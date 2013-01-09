@@ -6,3 +6,4 @@ collected_static/*
 .idea/*
 .project
 .pydevproject
+djangocon/local_settings.py

@@ -1,7 +1,10 @@
-from django.conf.urls import patterns, include, url
-from django.views.generic import TemplateView
 import settings
 
+from django.conf.urls import patterns, include, url
+from django.contrib import admin
+from django.views.generic import TemplateView
+
+admin.autodiscover()
 
 
 urlpatterns = patterns('',
@@ -11,6 +14,10 @@ urlpatterns = patterns('',
     url(r'^codeofconduct/$', TemplateView.as_view(template_name='codeofconduct.html')),
     url(r'^speakers/$', TemplateView.as_view(template_name='speakers.html')),
 
+    url(r'^vote/', include('vote.urls', namespace='vote', app_name='vote')),
+
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'', include('social_auth.urls')),
 )
 
 if not settings.DEBUG:

@@ -2,6 +2,9 @@
 import os
 import dj_database_url
 
+def project_path(path):
+    return os.path.abspath(os.path.join(os.path.dirname(__file__), path))
+
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
@@ -11,7 +14,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -54,7 +57,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_PATH, 'collected_static')
+STATIC_ROOT = project_path('../collected_static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -62,7 +65,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_PATH, 'static'),
+    project_path('../static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -90,23 +93,43 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'djangocon.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'wsgi.application'
+WSGI_APPLICATION = 'djangocon.wsgi.application'
 
-TEMPLATE_DIRS = ()
+TEMPLATE_DIRS = (
+    project_path('../templates'),
+)
 for root, dirs, files in os.walk(PROJECT_PATH):
     if 'templates' in dirs: TEMPLATE_DIRS += (os.path.join(root, 'templates'),)
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.request',
+    'django.core.context_processors.static',
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
+    'social_auth.context_processors.social_auth_backends',
+    'social_auth.context_processors.social_auth_login_redirect',
+)
+
 INSTALLED_APPS = (
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "gunicorn",
+    'gunicorn',
+    'south',
+    'social_auth',
+    'raven.contrib.django',
+
+    'vote',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -137,3 +160,22 @@ LOGGING = {
         },
     }
 }
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.contrib.github.GithubBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+LOGIN_REDIRECT_URL = LOGIN_ERROR_URL = LOGIN_URL = SOCIAL_AUTH_BACKEND_ERROR_URL = SOCIAL_AUTH_DISCONNECT_REDIRECT_URL = '/vote/'
+
+try:
+    GITHUB_APP_ID = os.environ['GITHUB_APP_ID']
+    GITHUB_API_SECRET = os.environ['GITHUB_API_SECRET']
+except KeyError:
+    pass
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
