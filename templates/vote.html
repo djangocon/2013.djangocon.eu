@@ -9,19 +9,26 @@
        Call for Papers - voting
     </div>
     <div class="content">
-    	{% if not request.user.is_authenticated %}
 			<p id="signin">
-				Welcome to the DjangoCon Call for Papers voting! We're more than happy to present you 75 excellent submission to vote on. Every Django community member is welcome to vote and choose the best talks to be presented at DjangoCon on 15-17th May. We're looking for 15 great, diverse and inspiring speeches. In order to vote, please indentify yourself by signing in with your Github account.
+				Welcome to the DjangoCon Call for Papers voting! We're more than happy to present you 75 excellent submission to vote on. Every Django community member is welcome to vote and choose the best talks to be presented at DjangoCon on 15-17th May. We're looking for 15 great, diverse and inspiring speeches. <br /><br />
 
-				{% for backend in social_auth.backends %}
-					<a href="{% url 'socialauth_begin' backend %}?{{ redirect_querystring }}" class="github_login">
-						<center><img src="{{ STATIC_URL }}img/signin_github.png" /></center>
-					</a>
-				{% endfor %}
+				<b>This round of voting closes on January 19th</b>. There is one important thing: we'll have another round of internal voting then. We already described it in <a href="http://blog.djangocircus.com/post/36590674298/call-for-speakers">Call for Papers rules</a>. In the second round we'll limit the number of options to the first 20-25 voted by you and ask more experienced DjangoCon organizers as well as Django community members to choose the final talks. We will also de-anonymise talks then.<br /><br />
+
+				In order to vote, please indentify yourself by signing in with your Github account.
+
+				{% if not request.user.is_authenticated %}
+
+					{% for backend in social_auth.backends %}
+						<a href="{% url 'socialauth_begin' backend %}?{{ redirect_querystring }}" class="github_login">
+							<center><img src="{{ STATIC_URL }}img/signin_github.png" /></center>
+						</a>
+					{% endfor %}
+
+				{% endif %}
 			</p>
 
 			<h2>Proposals:</h2>
-		{% endif %}
+
 
 		{% for entry in entries %}
 
@@ -32,7 +39,7 @@
 
 				<p>{{ entry.description|linebreaks|urlize }}
 
-				<p class="vote_buttons">
+				<div class="vote_buttons">
 					{% if entry|voted_by_user:request.user %}
 						{% with vote=entry|voted_by_user:request.user %}
 							You already voted for {{ vote.get_kind_display }}. <a href="javascript:void(0);" class="cancel" data-kind="{{ vote.kind }}" data-id="{{ vote.id }}">Cancel your vote?</a>
@@ -42,7 +49,7 @@
 						<a href="javascript:void(0);" class="vote" data-id="{{ entry.id }}" data-kind="1"><img src="{{ STATIC_URL }}img/vote_button_2.png" /></a>
 						<a href="javascript:void(0);" class="vote" data-id="{{ entry.id }}" data-kind="0"><img src="{{ STATIC_URL }}img/vote_button_3.png" /></a>
 					{% endif %}
-				</p>
+				</div>
 
 			</div>
 

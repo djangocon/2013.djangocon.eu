@@ -50,6 +50,7 @@ $(document).ready(function(){
                 var baloon = button.parent().parent().find('.baloon_counter');
                 var score = parseInt(baloon.text())+parseInt(button.attr('data-kind'));
                 baloon.html(score);
+                button.parent().find('.vote').css('display','none');
                 button.parent().html(data.message);
             } else {
                 button.parent().html(data.message);

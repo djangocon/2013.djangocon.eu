@@ -405,6 +405,12 @@ p.circusrole{
     line-height: 120%;
     margin: 10px 0 0px 0;
 }
+#cfp h2 {
+    font-family: "RiotSquad", Impact, fantasy;
+    font-size: 28px;
+    line-height: 120%;
+    margin: 10px 0 0px 0;
+}
 #cfp .entry:first-child {
     padding-top:0;
 }
@@ -416,6 +422,8 @@ p.circusrole{
     font-size: 18px;
     font-style: italic;
     color: #D9DC9E;
+    float: right;
+    width: 640px;
 }
 #cfp .cancel {
     font-size: 14px;
