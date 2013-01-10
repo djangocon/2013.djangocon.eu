@@ -34,10 +34,10 @@
 
 		{% for entry in entries %}
 
-			<div class="entry" data-id="{{ entry.id }}">
+			<div class="entry" data-id="{{ entry.id }}" id="entry{{ entry.id }}">
 				<div class="baloon_counter">{{ entry.score }}</div>
 
-				<h4>{{ entry.topic }}</h4>
+				<h4>{{ entry.topic }} <a href="/vote/#entry{{ entry.id }}"><i class="icon-link"></i></a></h4>
 
 				<p>{{ entry.description|safe|linebreaks|urlize }}
 
