@@ -39,7 +39,7 @@
 
 				<h4>{{ entry.topic }} <a href="/vote/#entry{{ entry.id }}"><i class="icon-link"></i></a></h4>
 
-				<p>{{ entry.description|safe|linebreaks|urlize }}
+				<p>{{ entry.description|markdown_display|safe|linebreaks|urlize }}
 
 				<div class="vote_buttons">
 					{% if entry|voted_by_user:request.user %}

@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import markdown
+
 from django import template
 from vote.models import Vote
 
@@ -10,3 +12,7 @@ def voted_by_user(entry, user):
 		return Vote.objects.get(user=user, entry=entry)
 	except:
 		return None
+
+@register.filter
+def markdown_display(text):
+	return markdown.markdown(text)
