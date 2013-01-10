@@ -35,7 +35,7 @@
 		{% for entry in entries %}
 
 			<div class="entry" data-id="{{ entry.id }}" id="entry{{ entry.id }}">
-				<div class="baloon_counter">???</div>
+				<div class="baloon_counter">{% if entry|voted_by_user:request.user %}{{ entry.score }}{% else %}???{% endif %}</div>
 
 				<h4>{{ entry.topic }} <a href="/vote/#entry{{ entry.id }}"><i class="icon-link"></i></a></h4>
 

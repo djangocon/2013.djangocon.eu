@@ -47,9 +47,7 @@ $(document).ready(function(){
 
         $.getJSON('/vote/add_vote/'+button.attr('data-id')+'/'+button.attr('data-kind')+'/', function(data){
             if (data.result == 'success'){
-                var baloon = button.parent().parent().find('.baloon_counter');
-                var score = parseInt(baloon.text())+parseInt(button.attr('data-kind'));
-                baloon.html(score);
+                button.parent().parent().find('.baloon_counter').html(data.score);
                 button.parent().find('.vote').css('display','none');
                 button.parent().html(data.message);
             } else {
@@ -64,11 +62,8 @@ $(document).ready(function(){
 
         $.getJSON('/vote/cancel_vote/'+button.attr('data-id')+'/', function(data){
             if (data.result == 'success'){
-                var baloon = button.parent().parent().find('.baloon_counter');
-                var score = parseInt(baloon.text())-parseInt(button.attr('data-kind'));
-                baloon.html(score);
+                button.parent().parent().find('.baloon_counter').html('???');
                 button.parent().html(data.message);
-
             } else {
                 button.parent().html(data.message);
             }

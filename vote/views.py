@@ -50,7 +50,7 @@ def add_vote(request, id=0, kind=2):
 
 	Vote.objects.create(entry=entry, user=request.user, kind=kind)
 	Entry.objects.filter(id=entry.id).update(score=F("score") + kind)
-	return json_response({'result':'success', 'message':'Your vote has been counted.'})
+	return json_response({'result':'success', 'message':'Your vote has been counted.', 'score': Entry.objects.get(id=id).score})
 
 @login_required
 def cancel_vote(request, id=0):
