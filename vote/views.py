@@ -2,6 +2,7 @@
 
 from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError
+from django.core.cache import cache
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.utils import simplejson as json
@@ -11,8 +12,19 @@ from vote.utils import json_response, json_error
 
 def index(request):
 
+	if request.user.is_authenticated():
+		pks = cache.get('entry_pks_'+str(request.user.id))
+		if pks == None:
+			pks = Entry.objects.order_by('?').values_list('id', flat=True)
+			cache.set('entry_pks_'+str(request.user.id), pks, 1209600)
+	else:
+		pks = Entry.objects.order_by('?').values_list('id', flat=True)
+
+	ss = Entry.objects.all()
+	entries = [s for p in pks for s in ss if s.pk == p]
+
 	return render(request, "vote.html", {
-		'entries': Entry.objects.all().order_by('?'),
+		'entries': entries,
 	})
 
 def add_vote(request, id=0, kind=2):
