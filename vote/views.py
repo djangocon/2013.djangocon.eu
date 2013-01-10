@@ -60,8 +60,7 @@ def cancel_vote(request, id=0):
 		return json_error('Vote does not exist.')
 
 	entry = vote.entry
-	entry.score -= vote.kind
-	entry.save()
+	Entry.objects.filter(id=entry.id).update(score=F("score") - vote.kind)
 	vote.delete()
 
 	return json_response({'result':'success', 'message':'Your vote has been cancelled.'})
