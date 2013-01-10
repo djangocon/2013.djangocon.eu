@@ -2,6 +2,8 @@
 {% load url from future %}
 {% load vote_tags %}
 
+{% block extra_js %}<script type="text/javascript" src="{{ STATIC_URL }}js/background_scroll.js" ></script>{% endblock %}
+
 {% block content %}
 
 <div class="popup" id="cfp">
@@ -37,7 +39,7 @@
 
 				<h4>{{ entry.topic }}</h4>
 
-				<p>{{ entry.description|linebreaks|urlize }}
+				<p>{{ entry.description|safe|linebreaks|urlize }}
 
 				<div class="vote_buttons">
 					{% if entry|voted_by_user:request.user %}
