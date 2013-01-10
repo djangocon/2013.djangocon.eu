@@ -3,6 +3,7 @@
 from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError
 from django.db.models import F
+from django.contrib.auth.models import User
 from django.core.cache import cache
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
@@ -26,6 +27,8 @@ def index(request):
 
 	return render(request, "vote.html", {
 		'entries': entries,
+		'users': User.objects.all().count(),
+		'votes': Vote.objects.all().count(),
 	})
 
 def add_vote(request, id=0, kind=2):
