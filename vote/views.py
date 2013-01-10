@@ -44,13 +44,12 @@ def add_vote(request, id=0, kind=2):
 	if kind < 0 or kind > 2:
 		return json_error('Wrong vote kind.')
 
-	if Vote.objects.filter(entry=entry, user=request.user).count() == 0:
-		Vote.objects.create(entry=entry, user=request.user, kind=kind)
-		entry.score += kind
-		entry.save()
-	else:
+	if Vote.objects.filter(entry=entry, user=request.user).exists():
 		return json_error('You can only add one vote for each entry.')
 
+	Vote.objects.create(entry=entry, user=request.user, kind=kind)
+	entry.score += kind
+	entry.save()
 	return json_response({'result':'success', 'message':'Your vote has been counted.'})
 
 @login_required
