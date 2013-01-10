@@ -12,7 +12,7 @@ from vote.utils import json_response, json_error
 def index(request):
 
 	return render(request, "vote.html", {
-		'entries': Entry.objects.all(),
+		'entries': Entry.objects.all().order_by('?'),
 	})
 
 def add_vote(request, id=0, kind=2):
