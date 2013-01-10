@@ -2,6 +2,7 @@
 
 from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError
+from django.db.models import F
 from django.core.cache import cache
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
@@ -48,8 +49,7 @@ def add_vote(request, id=0, kind=2):
 		return json_error('You can only add one vote for each entry.')
 
 	Vote.objects.create(entry=entry, user=request.user, kind=kind)
-	entry.score += kind
-	entry.save()
+	Entry.objects.filter(id=entry.id).update(score=F("score") + kind)
 	return json_response({'result':'success', 'message':'Your vote has been counted.'})
 
 @login_required
@@ -60,8 +60,7 @@ def cancel_vote(request, id=0):
 		return json_error('Vote does not exist.')
 
 	entry = vote.entry
-	entry.score -= vote.kind
-	entry.save()
+	Entry.objects.filter(id=entry.id).update(score=F("score") - vote.kind)
 	vote.delete()
 
 	return json_response({'result':'success', 'message':'Your vote has been cancelled.'})
