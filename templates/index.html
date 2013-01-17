@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/font-awesome.css" />
 
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.scrollTo.min.js" ></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/custom.js" ></script>
     {% block extra_js %}{% endblock %}
 
@@ -22,13 +23,14 @@
 </head>
 <body>
 
+<div class="second_background">
 <div class="top_menu">
     <div class="wrapper">
         <ul>
             <li><a href="/vote/">Vote for best talks!</a></li>
             <li><a href="http://blog.djangocircus.com/">Blog</a></li>
-            <li><a href="/speakers/">Speakers</a></li>
-            <li><a href="/static/pdf/Sponsorship.pdf">Sponsorships</a></li>
+            <li><a href="#" id="scrollto-speakers">Speakers</a></li>
+            <li><a href="#" id="scrollto-sponsors">Sponsors</a></li>
             <li><a href="/team/">Team</a></li>
             <li><a href="mailto:hello@djangocircus.com">Contact</a></li>
             <li><a href="https://github.com/djangocon/2013.djangocon.eu"><i class="icon-github-sign"></i></a></li>
@@ -257,25 +259,44 @@
 
     <div style="clear:both;"></div>
 
-    <a href="/static/pdf/Sponsorship.pdf"><img src="{{ STATIC_URL }}img/sponsorship_opportunities.png" class="sponsorship_opportunities" alt="Sponsorship opportunities" ></a>
 
-    <div style="clear:both;"></div>
 
-    <!--
     <div id="sponsors">
-        <div class="header">
-            <a href="#" class="read_more">Sponsors</a>
-        </div>
-        <div class="content">
+        <div class="header">Sponsors</div>
 
+        <div id="diamond" class="logos">
+            <h3>Diamond</h3>
+            <p>
+                <a href="http://divio.ch/" target="_blank"><img src="{{ STATIC_URL }}img/sponsors/divio_off.png" /></a>
+            </p>
+            <div style="clear:both;"></div>
         </div>
+
+        <div id="gold" class="logos">
+            <h3>Gold</h3>
+            <p>
+                <a href="http://djangostars.com/" target="_blank"><img src="{{ STATIC_URL }}img/sponsors/djangostars_off.png" width="200" /></a>
+                <a href="http://www.jetbrains.com/pycharm/" target="_blank"><img src="{{ STATIC_URL }}img/sponsors/pycharm_off.png" width="200" /></a>
+            </p>
+            <div style="clear:both;"></div>
+        </div>
+
+        <div id="supporter" class="logos">
+            <h3>Supporter</h3>
+            <p>
+                <a href="http://heroku.com/" target="_blank"><img src="{{ STATIC_URL }}img/sponsors/heroku_off.png" /></a>
+                <a href="http://github.com/" target="_blank"><img src="{{ STATIC_URL }}img/sponsors/github_off.png" /></a>
+            </p>
+            <div style="clear:both;"></div>
+        </div>
+
+        <a href="/static/pdf/Sponsorship.pdf"><img src="{{ STATIC_URL }}img/sponsorship_opportunities.png" class="sponsorship_opportunities" alt="Sponsorship opportunities" ></a>
 
     </div>
-    -->
     {% endblock content %}
 
 </div>
-
+</div>
 
 
 <script type="text/javascript">

@@ -17,8 +17,25 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* Piotr Bulinski's styles for DjangoCircus */
 body {
     font-family: "Sansation", Verdana, sans-serif;
-    background: #fcfdf1 url('../img/bg_center.jpg') no-repeat center top;
+    background-color: #fcfdf1;
+    background-image: url('../img/bg_center_2.png');
+    background-repeat: no-repeat;
+    background-position: center top;
     line-height: 120%;
+    transition: background-image 1.4s ease-in-out;
+    -moz-transition: background-image 1.4s ease-in-out;
+    -webkit-transition: background-image 1.4s ease-in-out;
+}
+
+.second_background {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background: url('../img/bg_center_1.png') no-repeat center top;
+}
+
+.transparent {
+    background-image: url('../img/bg_center_1.png');
 }
 
 .wrapper {
@@ -101,7 +118,7 @@ a {
 .about .header {
     width: 403px;
     height: 67px;
-    background: url('../img/h_about.png') no-repeat;
+    background: url('../img/header.png') no-repeat;
     padding-top: 20px;
     padding-left: 30px;
 }
@@ -129,7 +146,7 @@ a {
 .location .header {
     width: 403px;
     height: 67px;
-    background: url('../img/h_about.png') no-repeat;
+    background: url('../img/header.png') no-repeat;
     padding-top: 20px;
     padding-left: 30px;
 }
@@ -239,7 +256,7 @@ a {
 .newsletter .header {
     width: 403px;
     height: 52px;
-    background: url('../img/h_about.png') no-repeat;
+    background: url('../img/header.png') no-repeat;
     padding-top: 20px;
     padding-left: 30px;
 }
@@ -290,32 +307,32 @@ a {
     margin-top: 5px;
 }
 
-.popup, #sponsors {
+.popup {
     width: 839px;
     margin-bottom: 40px;
     line-height: 140%;
 }
-.popup p, #sponsors p{
+.popup p {
     margin-bottom: 10px;
 }
 
-.popup .header, #sponsors .header {
+.popup .header {
     height: 80px;
     width: 764px;
     background: url('../img/popup.png') no-repeat;
     padding: 20px 30px 0 45px;
 }
-.popup .header .a, .popup .header .a:hover, #sponsors .header .a, #sponsors .header .a:hover {
+.popup .header .a, .popup .header .a:hover {
     color: #000 !important;
 }
 
-.popup .date, #sponsors .date {
+.popup .date {
     text-align: right;
     font-family: "Sansation", Verdana, sans-serif;
     font-size: 16px;
     margin-top:30px;
 }
-.popup .content, #sponsors .content {
+.popup .content {
     background: white;
     border-left: 14px solid black;
     border-right: 6px solid black;
@@ -359,6 +376,38 @@ a {
     font-size: 14px;
     font-weight: bold;
 }
+
+#sponsors {
+    width: 650px;
+}
+#sponsors .header {
+    width: 373px;
+    height: 47px;
+    padding: 20px 0 0 30px;
+    font-family: "RiotSquad", Impact, fantasy;
+    font-size: 32px;
+    color: #000;
+    background: url(../img/header.png) no-repeat;
+}
+#sponsors .logos {
+    padding: 50px 0 10px 30px;
+}
+#sponsors .logos h3 {
+    font-size: 25px;
+    float: left;
+    color: #d01e32;
+    margin: 0;
+}
+#sponsors .logos p {
+    float:right;
+    width: 470px;
+    text-align: left;
+}
+#sponsors .logos p img {
+    margin: 0 30px 30px 0;
+}
+
+
 .sponsorship_opportunities {
     clear: both;
     margin: 20px 0 20px 100px;

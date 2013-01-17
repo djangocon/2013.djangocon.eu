@@ -3,9 +3,23 @@ function start_backgroundscroll(){
         if ($(window).scrollTop() > 650){
         	$('body').css('background-position', 'center -650px');
             $('body').css('background-attachment', 'fixed');
+            $('.second_background').css('background-position', 'center -650px');
+            $('.second_background').css('background-attachment', 'fixed');
+
+            if ($(window).scrollTop() > $('.second_background').height()-$(window).height()-$('#sponsors').height()){
+                offset = $('.second_background').height()-$(window).height()-$('#sponsors').height() - 650;
+                $("body").css('background-position', 'center '+String(offset)+'px');
+                $('body').css('background-attachment', 'scroll');
+            } else {
+                $("body").css('background-position', 'center -650px');
+                $('body').css('background-attachment', 'fixed');
+            }
+
         } else {
             $('body').css('background-position', 'center 0px');
             $('body').css('background-attachment', 'scroll');
+            $('.second_background').css('background-position', 'center 0px');
+            $('.second_background').css('background-attachment', 'scroll');
         }
     });
 }
@@ -41,6 +55,13 @@ $(document).ready(function(){
     set_facebook();
     set_twitter();
 
+    $('#scrollto-sponsors').click(function(){
+        $(window).stop().scrollTo($('#sponsors'), 800);
+    });
+    $('#scrollto-speakers').click(function(){
+        $(window).stop().scrollTo($('#speakers'), 800);
+    });
+
     $('.vote_buttons .vote').click(function(){
 
         var button = $(this)
@@ -69,7 +90,19 @@ $(document).ready(function(){
             }
         });
 
-    })
+    });
+
+    $('#sponsors a').mouseover(function(){
+
+        var src = $(this).find('img').attr('src').replace('off.','on.');
+        $(this).find('img').attr('src', src);
+
+    }).mouseout(function(){
+
+        var src = $(this).find('img').attr('src').replace('on.','off.');
+        $(this).find('img').attr('src', src);
+
+    });
 
 });
 
