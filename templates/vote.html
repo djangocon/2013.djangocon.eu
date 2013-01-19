@@ -44,6 +44,9 @@
 				<p>{{ entry.description|markdown_display|safe|linebreaks|urlize }}
 
 				<div class="vote_buttons">
+					{% if not is_voting_open %}
+						Voting is closed.
+					{% else %}
 					{% if entry|voted_by_user:request.user %}
 						{% with vote=entry|voted_by_user:request.user %}
 							You already voted for {{ vote.get_kind_display }}. <a href="javascript:void(0);" class="cancel" data-kind="{{ vote.kind }}" data-id="{{ vote.id }}">Cancel your vote?</a>
@@ -52,6 +55,7 @@
 						<a href="javascript:void(0);" class="vote" data-id="{{ entry.id }}" data-kind="2"><img src="{{ STATIC_URL }}img/vote_button_1.png" /></a>
 						<a href="javascript:void(0);" class="vote" data-id="{{ entry.id }}" data-kind="1"><img src="{{ STATIC_URL }}img/vote_button_2.png" /></a>
 						<a href="javascript:void(0);" class="vote" data-id="{{ entry.id }}" data-kind="0"><img src="{{ STATIC_URL }}img/vote_button_3.png" /></a>
+					{% endif %}
 					{% endif %}
 				</div>
 

@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import time
+from datetime import datetime
 
 from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError
@@ -25,15 +27,23 @@ def index(request):
 	ss = Entry.objects.all()
 	entries = [s for p in pks for s in ss if s.pk == p]
 
+	is_voting_open = True
+	if datetime.now() > datetime(2013,1,20,0,0,0):
+		is_voting_open = False
+
 	return render(request, "vote.html", {
 		'entries': entries,
 		'users': User.objects.all().count(),
 		'votes': Vote.objects.all().count(),
+		'is_voting_open': is_voting_open,
 	})
 
 def add_vote(request, id=0, kind=2):
 	if request.user.is_anonymous():
 		return json_error('<a href="#signin">Sign in</a> to vote for submissions.')
+
+	if datetime.now() > datetime(2013,1,20,0,0,0):
+		return json_error('Voting is closed.')
 
 	try:
 		entry = Entry.objects.get(id=id)
@@ -61,6 +71,9 @@ def cancel_vote(request, id=0):
 		vote = Vote.objects.get(id=id, user=request.user)
 	except Vote.DoesNotExist:
 		return json_error('Vote does not exist.')
+
+	if datetime.now() > datetime(2013,1,20,0,0,0):
+		return json_error('Voting is closed.')
 
 	entry = vote.entry
 	Entry.objects.filter(id=entry.id).update(score=F("score") - vote.kind)
