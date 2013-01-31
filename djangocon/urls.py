@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     url(r'^codeofconduct/$', TemplateView.as_view(template_name='codeofconduct.html')),
     url(r'^speakers/$', TemplateView.as_view(template_name='speakers.html')),
 
-    url(r'^vote/', include('vote.urls', namespace='vote', app_name='vote')),
+    #url(r'^vote/', include('vote.urls', namespace='vote', app_name='vote')),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'', include('social_auth.urls')),
