@@ -15,7 +15,7 @@
             <div class="header">{{ speaker }}</div>
             <div class="content">
                 <p>
-                    <img src="/{{ speaker.photo.url }}" alt="{{ speaker }}" />
+                    <img src="{{ speaker.photo }}" alt="{{ speaker }}" />
                 </p>
                 {{ speaker.bio|urlize|safe|linebreaks }}
                 {% if speaker.twitter %}<p><a href="http://twitter.com/{{ speaker.twitter }}"><img src="{{ STATIC_URL }}img/i_t.png" /></a></p>{% endif %}

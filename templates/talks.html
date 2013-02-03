@@ -16,7 +16,7 @@
         <div id="{{ talk.speaker.slug }}" class="talk-box">
             <a href="{% url speakers:speakers %}#{{ talk.speaker.slug }}">
                 <div class="speaker">
-                    <img src="/{{ talk.speaker.photo.url }}" alt="{{ talk.speaker }}" />
+                    <img src="{{ talk.speaker.photo }}" alt="{{ talk.speaker }}" />
                     <h4>{{ talk.speaker }}</h4>
                     <span>{{ talk.speaker.title }}</span>
                 </div>
