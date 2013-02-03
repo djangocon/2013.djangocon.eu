@@ -14,13 +14,36 @@
 
         {% for talk in talks %}
         <div id="{{ talk.speaker.slug }}" class="talk-box">
-            <a href="{% url speakers:speakers %}#{{ talk.speaker.slug }}">
-                <div class="speaker">
-                    <img src="{{ talk.speaker.photo }}" alt="{{ talk.speaker }}" />
-                    <h4>{{ talk.speaker }}</h4>
-                    <span>{{ talk.speaker.title }}</span>
-                </div>
-            </a>
+
+            {% if talk.speaker.count > 1 %}
+                {% with speakers=talk.speaker.all %}
+                <a href="{% url speakers:speakers %}#{% for speaker in speakers %}{% if forloop.first %}{{ speaker.slug }}{% endif %}{% endfor %}">
+                    <div class="speaker">
+                        <img src="/static/img/speakers/{% for speaker in speakers %}{{ speaker.slug }}{% if forloop.first %}and{% endif %}{% endfor %}.png" alt="{% for speaker in speakers %}{{ speaker.first_name }}{% if forloop.first %} & {% endif %}{% endfor %}" />
+                        <h4>{% for speaker in speakers %}{{ speaker.first_name }}{% if forloop.first %} & {% endif %}{% endfor %}</h4>
+                        <span>{% for speaker in speakers %}{% if forloop.first %}{{ speaker.title }}{% endif %}{% endfor %}</span>
+                    </div>
+                </a>
+                {% endwith %}
+            {% else %}
+                {% for speaker in talk.speaker.all %}
+                <a href="{% url speakers:speakers %}#{{ speaker.slug }}">
+                    <div class="speaker">
+                        <img src="{{ speaker.photo }}" alt="{{ speaker }}" />
+                        <h4>{{ speaker }}</h4>
+                        <span>{{ speaker.title }}</span>
+                    </div>
+                </a>
+                {% endfor %}
+            {% endif %}
+
+
+            {% for speaker in talk.speaker.all %}
+                {% if forloop.first %}
+
+                {% endif %}
+            {% endfor %}
+
             <div class="talk">
                 <h3><a href="{% url speakers:talks %}#{{ talk.speaker.slug }}">{{ talk.title }}</a></h3>
                 {{ talk.description|safe|linebreaksbr|urlize }}

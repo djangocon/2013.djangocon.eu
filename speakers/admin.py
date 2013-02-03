@@ -7,7 +7,7 @@ class SpeakerAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'last_name','title','photo','is_public']
 
 class TalkAdmin(admin.ModelAdmin):
-    list_display = ['speaker', 'title', 'description', 'is_public']
+    list_display = ['speakers_names', 'title', 'description', 'is_public']
     list_editable = ['title','description']
 
 admin.site.register(Speaker, SpeakerAdmin)

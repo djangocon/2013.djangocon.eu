@@ -20,7 +20,7 @@ class Speaker(models.Model):
 		return '/static/img/speakers/%s.png' % (self.slug.lower())
 
 class Talk(models.Model):
-	speaker = models.ForeignKey(Speaker, null=False, blank=False)
+	speaker = models.ManyToManyField(Speaker, null=True, blank=True)
 	title = models.CharField(max_length=255, null=False, blank=False, verbose_name="Talk title")
 	description = models.TextField(null=False, blank=False, verbose_name="Description")
 	is_public = models.BooleanField(default=False, null=False, blank=False)
@@ -29,4 +29,8 @@ class Talk(models.Model):
 		verbose_name = "Talk"
 
 	def __unicode__(self):
-		return "%s %s - %s" % (self.speaker.first_name, self.speaker.last_name, self.title)
+		return self.title
+
+	def speakers_names(self):
+		return ', '.join([str(a) for a in self.speaker.all()])
+	speakers_names.short_description = "Speakers"
