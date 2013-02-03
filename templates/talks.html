@@ -23,7 +23,7 @@
             </a>
             <div class="talk">
                 <h3><a href="{% url speakers:talks %}#{{ talk.speaker.slug }}">{{ talk.title }}</a></h3>
-                {{ talk.description|safe|urlize|linebreaks }}
+                {{ talk.description|safe|linebreaks|urlize }}
             </div>
             <div style="clear:both"></div>
         </div>
