@@ -523,22 +523,20 @@ p.circusrole{
 #talks .talk {
     width: 470px;
     float: left;
-    margin-top:24px;
-    text-align: right;
+    margin:24px 0 30px 0;
+    text-align: left;
+
 }
 #talks .talk h3 {
     color: #d01e32;
     font-family: "RiotSquad", sans-serif;
+    margin: 0 0 10px 0;
+    line-height: 130%;
 }
 #talks .talk-box:nth-child(odd) .speaker {
     float:left;
     margin-right: 10px;
 }
-#talks .talk-box:nth-child(odd) .talk {
-    text-align: left;
-
-}
-
 /*======================================================
 ======================= MOBILE =========================
 ======================================================*/
