@@ -151,7 +151,7 @@ INSTALLED_APPS = (
     'social_auth',
     'raven.contrib.django',
 
-    'vote',
+    'speakers',
 )
 
 # A sample logging configuration. The only tangible logging
