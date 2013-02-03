@@ -17,7 +17,7 @@
                 <p>
                     <img src="{{ speaker.photo }}" alt="{{ speaker }}" />
                 </p>
-                {{ speaker.bio|urlize|safe|linebreaks }}
+                {{ speaker.bio|safe|urlize|linebreaks }}
                 {% if speaker.twitter %}<p><a href="http://twitter.com/{{ speaker.twitter }}"><img src="{{ STATIC_URL }}img/i_t.png" /></a></p>{% endif %}
                 <div style="clear:both;"></div>
             </div>
