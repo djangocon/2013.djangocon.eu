@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>DjangoCon Europe 2013 - Talks</title>
+{% endblock title %}
+
+{% block body_class %} class="nobackground"{% endblock %}
+
+{% block content %}
+
+
+    <div id="talks">
+         <div class="header">Talks</div>
+
+        {% for talk in talks %}
+        <div id="{{ talk.speaker.slug }}" class="talk-box">
+            <a href="{% url speakers:speakers %}#{{ talk.speaker.slug }}">
+                <div class="speaker">
+                    <img src="/{{ talk.speaker.photo.url }}" alt="{{ talk.speaker }}" />
+                    <h4>{{ talk.speaker }}</h4>
+                    <span>{{ talk.speaker.title }}</span>
+                </div>
+            </a>
+            <div class="talk">
+                <h3><a href="{% url speakers:talks %}#{{ talk.speaker.slug }}">{{ talk.title }}</a></h3>
+                {{ talk.description|urlize|linebreaks|safe }}
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        {% endfor %}
+
+        <div style="clear:both"></div>
+    </div>
+{% endblock content %}
