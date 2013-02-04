@@ -29,6 +29,9 @@ body {
     margin: 0 auto;
     background: url('../img/bg_center_1.png') no-repeat center top;
 }
+.morespace {
+    background: url('../img/bg_center_1_morespace.png') no-repeat center top;
+}
 .nobackground {
     background-image: none;
 }
@@ -484,6 +487,7 @@ p.circusrole{
 ======================================================*/
 #talks {
     width:720px;
+    margin: 0 0 30px 30px;
 }
 #talks .header {
     width: 403px;
