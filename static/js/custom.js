@@ -1,23 +1,13 @@
 function start_backgroundscroll(){
    $(window).scroll(function () {
         if ($(window).scrollTop() > 650){
-        	$('body').css('background-position', 'center -650px');
-            $('body').css('background-attachment', 'fixed');
             $('.second_background').css('background-position', 'center -650px');
             $('.second_background').css('background-attachment', 'fixed');
 
             if ($(window).scrollTop() > $('.second_background').height()-$(window).height()-$('#sponsors').height()){
                 offset = $('.second_background').height()-$(window).height()-$('#sponsors').height() - 650;
-                $("body").css('background-position', 'center '+String(offset)+'px');
-                $('body').css('background-attachment', 'scroll');
-            } else {
-                $("body").css('background-position', 'center -650px');
-                $('body').css('background-attachment', 'fixed');
             }
-
         } else {
-            $('body').css('background-position', 'center 0px');
-            $('body').css('background-attachment', 'scroll');
             $('.second_background').css('background-position', 'center 0px');
             $('.second_background').css('background-attachment', 'scroll');
         }

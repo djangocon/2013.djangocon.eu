@@ -17,7 +17,7 @@ body {
     background-color: #fcfdf1;
     background-image: url('../img/bg_center_2.png');
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center 200px;
     line-height: 120%;
     transition: background-image 1.4s ease-in-out;
     -moz-transition: background-image 1.4s ease-in-out;
@@ -62,9 +62,9 @@ b, strong {
     background:#172423;
     height: 57px;
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
-
+    z-index: 1000;
 }
 .logo_wrapper {
     width: 100%;
@@ -91,6 +91,7 @@ a {
 .top_logo {
     margin-left: 20px;
     position: relative;
+    z-index:2000;
 }
 .box_container {
     width: 460px;
@@ -102,6 +103,21 @@ a {
 /*======================================================
 ======================= HOMEPAGE =======================
 ======================================================*/
+.tickets {
+    margin: 0 0 40px 30px;
+    width:500px;
+    clear: both;
+}
+.tickets .image {
+    float: left;
+    margin: 0 15px 0 0;
+}
+.tickets p {
+    font-size: 20px;
+    padding: 20px 0 10px 0;
+    line-height: 130%;
+}
+
 .about {
     width: 400px;
     margin-left: 20px;
@@ -137,7 +153,7 @@ a {
 
 .location .header {
     width: 403px;
-    height: 67px;
+    height: 57px;
     background: url('../img/header.png') no-repeat;
     padding-top: 20px;
     padding-left: 30px;
@@ -146,6 +162,17 @@ a {
 .location .body {
     padding-left: 44px;
     padding-right: 10px;
+    margin-bottom:10px;
+    text-align: center;
+}
+.location .body:last-child {
+    text-align: center;
+}
+.location p {
+    margin-bottom:5px;
+}
+.location p:last-child {
+    padding: 0 5px;
 }
 
 .location .map {
@@ -159,9 +186,10 @@ a {
 
 /** networks **/
 .networks {
-    width: 400px;
     height: 120px;
-    margin-left: 40px;
+    position: absolute;
+    top:150px;
+    left:550px;
 }
 
 .networks .network {
@@ -195,6 +223,9 @@ a {
 .icon.twitter {
     background: url('../img/i_t.png') no-repeat;
 }
+.icon.lanyard {
+    background: url('../img/i_l.png') no-repeat;
+}
 
 /** twitter **/
 .twitter {
@@ -203,7 +234,9 @@ a {
     height: 702px;
     margin-top:-30px;
 }
-
+.twitter-box {
+    margin-top:100px;
+}
 .twitter .header {
     height: 67px;
     width: 330px;
@@ -219,7 +252,7 @@ a {
 .twitter .tweets {
     width: 320px;
     height: 220px;
-    margin-top: 6px;
+    margin-top: 21px;
     margin-left: 64px;
     overflow: hidden;
 }
@@ -229,7 +262,7 @@ a {
 }
 
 .twitter .tweets .tweet {
-    border-bottom: 1px solid black;
+    border-bottom: 1px dashed #42A59F;
     padding: 6px 0;
 }
 .twitter .tweets:last-child {
@@ -387,7 +420,7 @@ p.circusrole{
 ======================================================*/
 
 #sponsors {
-    width: 650px;
+    width: 680px;
 }
 #sponsors .header {
     width: 373px;
@@ -409,7 +442,7 @@ p.circusrole{
 }
 #sponsors .logos p {
     float:right;
-    width: 470px;
+    width: 500px;
     text-align: left;
 }
 #sponsors .logos p img {
@@ -541,6 +574,36 @@ p.circusrole{
     float:left;
     margin-right: 10px;
 }
+
+.venue img, .venue iframe {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+.schedule .day {
+    font-size: 14px;
+    text-align: left;
+    height: 150px;
+    width:700px;
+}
+.schedule .day p {
+    float:left;
+    margin-top:20px;
+    width: 570px;
+}
+.schedule .day b {
+    font-size: 16px;
+}
+.schedule .day:last-child {
+    margin: 0;
+}
+.schedule .day img {
+    width:120px;
+    float: left;
+    margin-right: 10px;
+}
+
+
 /*======================================================
 ======================= MOBILE =========================
 ======================================================*/

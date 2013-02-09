@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>Schedule - DjangoCon Europe 2013</title>
+{% endblock title %}
+
+{% block content %}
+<div class="popup schedule">
+    <div class="header">
+       Schedule
+    </div>
+    <div class="content">
+        <p>We don't have an actual agenda yet, however you can see the <a href="/talks/">list of talks here</a>. Below we give you a rough idea on what's going to happen.</p>
+
+        <div class="day">
+            <img src="{{ STATIC_URL }}img/schedule_may15.png" />
+            <p><b>TALK DAY</b><br /> We're kicking off at 9am, so you may want to arrive the day before. Ending at 5pm + ~1 hour of fun lightning talks + crazy bowling party at 8pm (open bar!)</p>
+        </div>
+        <div class="day">
+            <img src="{{ STATIC_URL }}img/schedule_may16.png" />
+            <p><b>TALK DAY 2</b><br /> Very similiar schedule to DAY 1. </p>
+        </div>
+        <div class="day">
+            <img src="{{ STATIC_URL }}img/schedule_may17.png" />
+            <p><b>TALK DAY 3</b><br /> Again, kicking off at 9am, ending at 5pm. Then be prepare because we're going to throw a party right next to the circus (or maybe in?!) If you miss this, you will regret, like a lot.</p>
+        </div>
+        <div class="day">
+            <img src="{{ STATIC_URL }}img/schedule_may18.png" />
+            <p><b>SPRINTS DAY</b><br /> We're leaving the circus and getting our hands and keyboards dirty at the <a href="/venue/">GammaFactory</a>. Code some nice new features, close some Django tickets and talk with Django Core Team. (~10am - 5pm)</p>
+        </div>
+        <div class="day">
+            <img src="{{ STATIC_URL }}img/schedule_may19.png" />
+            <p><b>SPRINTS DAY 2</b><br />The same as first sprints day, but we'll probably wrap up with some beer :)</p>
+        </div>
+
+        <div style="clear:both;"></div>
+    </div>
+</div>
+{% endblock content %}
