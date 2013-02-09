@@ -10,6 +10,7 @@ oauth2==1.5.211
 PIL==1.1.7
 psycopg2==2.4.5
 pylibmc==1.2.3
+pyquery==1.2.4
 python-openid==2.2.5
 raven
 simplejson==2.6.1

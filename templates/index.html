@@ -30,10 +30,11 @@
         <ul>
             <li><a href="http://tickets.djangocon.eu/">TICKETS!!</a></li>
             <li><a href="http://blog.djangocircus.com/">Blog</a></li>
-            <li><a href="{% url speakers:speakers %}">Speakers</a></li>
+            <li><a href="#" id="scrollto-speakers">Speakers</a></li>
             <li><a href="{% url speakers:talks %}">Talks</a></li>
+            <li><a href="/schedule/">Schedule</a></li>
+            <li><a href="/venue/">Venue</a></li>
             <li><a href="#" id="scrollto-sponsors">Sponsors</a></li>
-            <li><a href="/team/">Team</a></li>
             <li><a href="mailto:hello@djangocircus.com">Say hi!</a></li>
             <li><a href="https://github.com/djangocon/2013.djangocon.eu"><i class="icon-github-sign"></i></a></li>
         </ul>
@@ -44,6 +45,29 @@
     <a href="/"><img src="{{ STATIC_URL }}img/logo.png" alt="DjangoCon Europe Circus Edition" class="top_logo" /></a>
   </div>
   {% block content %}
+    <div class="networks box">
+        <div class="network">
+            <div class="counter facebook">0</div>
+            <a href="https://www.facebook.com/DjangoConEurope" target="_blank"><div class="icon facebook"></div></a>
+        </div>
+        <div class="network" style="margin-top:30px;">
+            <div class="counter twitter">0</div>
+            <a href="https://www.twitter.com/djangocon" target="_blank"><div class="icon twitter"></div></a>
+        </div>
+        <div class="network" style="margin-top:0px;">
+            <div class="counter lanyard">{{ lanyard }}</div>
+            <a href="http://lanyrd.com/2013/djangocon-europe/" target="_blank"><div class="icon lanyard"></div></a>
+        </div>
+    </div>
+
+    <div class="tickets">
+        <a href="http://tickets.djangocon.eu/"><img src="{{ STATIC_URL }}img/tickets.png" class="image" /></a>
+        <p>Next sales starts on Wed,<br /> 13th Feb at 2pm CET.</p>
+        <a href="http://tickets.djangocon.eu/"><img src="{{ STATIC_URL }}img/tickets_button.png" class="button" /></a>
+    </div>
+    <div style="clear:both;"></div>
+
+
     <div class="box_container">
         <div class="about box">
             <div class="header">
@@ -57,28 +81,25 @@
 
         <div class="location box">
             <div class="header">
-                Warsaw, 15-19 May 2013
+                Where?
             </div>
 
-            <div class="body">We're really happy to host you in Warsaw, Poland and make this place your home for a few days in May 2013. We found a perfect, green and calm place for our crazy circus - <b>Horse Racingtrack in Warsaw</b>. Click below for a map!</div>
+            <div class="body">We're really happy to host you in Warsaw, Poland and make this place your home for a few days in May 2013. We found a perfect place for our crazy circus - <b>Horse Racingtrack in Warsaw</b>. <a href="/venue/">See the Venue</a>.</div>
 
-            <div class="map">
-                <a href="http://goo.gl/maps/1hzwR"><img src="{{ STATIC_URL }}img/map.png" alt="location map" /></a>
+            <div class="header">
+                When?
             </div>
+
+            <div class="body">
+                <p><b>15 - 17th May'13</b> <br /> three full days of talks. Kicks off at 9am everyday until 6pm.</p>
+                <p><b>18 - 19th May'13</b> <br /> two days of sprints: let's hack together & contribute to open source world.</p>
+                <p><a href="/venue/">See the Schedule</a>.</a>
+            </div>
+
         </div><!-- location -->
 
     </div><!-- box_container -->
     <div class="box_container">
-        <div class="networks box">
-            <div class="network">
-                <div class="counter facebook">0</div>
-                <a href="https://www.facebook.com/DjangoConEurope" target="_blank"><div class="icon facebook"></div></a>
-            </div>
-            <div class="network" style="margin-top:30px;">
-                <div class="counter twitter">0</div>
-                <a href="https://www.twitter.com/djangocon" target="_blank"><div class="icon twitter"></div></a>
-            </div>
-        </div>
         <div class="twitter box">
             <div class="header">
                 <span class="red">Follow</span> us on Twitter!<br/>
@@ -164,6 +185,7 @@
             <h3>Silver</h3>
             <p>
                 <a href="http://getnicer.com/" target="_blank"><img src="{{ STATIC_URL }}img/sponsors/nicer_off.png" width="170" /></a>
+                <a href="http://10clouds.com/" target="_blank"><img src="{{ STATIC_URL }}img/sponsors/10clouds_off.png" width="170" /></a>
             </p>
             <div style="clear:both;"></div>
         </div>
@@ -173,6 +195,8 @@
             <p>
                 <a href="http://heroku.com/" target="_blank"><img src="{{ STATIC_URL }}img/sponsors/heroku_off.png" /></a>
                 <a href="http://github.com/" target="_blank"><img src="{{ STATIC_URL }}img/sponsors/github_off.png" /></a>
+                <a href="http://megiteam.pl/" target="_blank"><img src="{{ STATIC_URL }}img/sponsors/megiteam_off.png" /></a>
+                <a href="http://stickermule.com/" target="_blank"><img src="{{ STATIC_URL }}img/sponsors/stickermule_off.png" /></a>
             </p>
             <div style="clear:both;"></div>
         </div>
