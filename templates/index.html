@@ -30,11 +30,11 @@
         <ul>
             <li><a href="http://tickets.djangocon.eu/">TICKETS!!</a></li>
             <li><a href="http://blog.djangocircus.com/">Blog</a></li>
-            <li><a href="#" id="scrollto-speakers">Speakers</a></li>
+            <li><a href="{% if request.get_full_path == '/' %}#" id="scrollto-speakers{% else %}/speakers/{% endif %}">Speakers</a></li>
             <li><a href="{% url speakers:talks %}">Talks</a></li>
             <li><a href="/schedule/">Schedule</a></li>
             <li><a href="/venue/">Venue</a></li>
-            <li><a href="#" id="scrollto-sponsors">Sponsors</a></li>
+            <li><a href="{% if request.get_full_path == '/' %}#" id="scrollto-sponsors{% else %}/#sponsors{% endif %}">Sponsors</a></li>
             <li><a href="mailto:hello@djangocircus.com">Say hi!</a></li>
             <li><a href="https://github.com/djangocon/2013.djangocon.eu"><i class="icon-github-sign"></i></a></li>
         </ul>
