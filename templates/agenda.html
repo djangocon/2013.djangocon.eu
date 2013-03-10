@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>Agenda - DjangoCon Europe 2013</title>
+{% endblock title %}
+
+{% block body_class %} class="nobackground"{% endblock %}
+{% block secondbackground_class %} morespace{% endblock %}
+
+{% block content %}
+    <div id="agenda">
+
+         <nav>
+            <a href="javascript:void(0);" data-id="day1" class="button active">Day 1</a>
+            <a href="javascript:void(0);" data-id="day2" class="button">Day 2</a>
+            <a href="javascript:void(0);" data-id="day3" class="button">Day 3</a>
+            <a href="javascript:void(0);" data-id="day4" class="button">Day 4</a>
+            <a href="javascript:void(0);" data-id="day5" class="button">Day 5</a>
+        </nav>
+
+
+        {% regroup agenda by day as agenda_list %}
+
+        {% for day in agenda_list %}
+            <div id="day{{ day.grouper }}" class="day">
+            {% for item in day.list %}
+                <div class="item{% if item.description %} description{% endif %}{% if item.is_featured %} featured{% endif %}">
+                    <div class="time">
+                        {{ item.start|date:"G:i" }} - {{ item.finish|date:"G:i" }}
+                    </div>
+                    {% if item.talk %}
+                        <div class="speaker">
+                            <a href="">{% for speaker in item.talk.speaker.all %}{{ speaker.first_name }} {{ speaker.last_name }}{% if item.talk.speaker.count > 1 %}{% if forloop.first %} and {% endif %}{% endif %}{% endfor %}</a>
+                        </div>
+                        <div class="text">
+                            <a href="">{{ item.talk.title }}</a>
+                        </div>
+                    {% else %}
+                        <div class="text">
+                            {{ item.description }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <div>
+        {% endfor %}
+
+        <div style="clear:both"></div>
+    </div>
+{% endblock content %}

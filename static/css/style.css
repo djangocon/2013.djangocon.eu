@@ -105,7 +105,7 @@ a {
 ======================================================*/
 .tickets {
     margin: 0 0 40px 30px;
-    width:500px;
+    width:530px;
     clear: both;
 }
 .tickets .image {
@@ -113,7 +113,7 @@ a {
     margin: 0 15px 0 0;
 }
 .tickets p {
-    font-size: 20px;
+    font-size: 18px;
     padding: 20px 0 10px 0;
     line-height: 130%;
 }
@@ -602,6 +602,61 @@ p.circusrole{
     float: left;
     margin-right: 10px;
 }
+
+/*=== AGENDA ====*/
+nav {
+
+}
+nav a {
+    background: #FCFDF1;
+    color: black;
+    padding:7px 20px;
+    margin-right: 10px;
+
+    border-bottom: 0px;
+    font-size:20px;
+    text-align: center;
+    line-height: 150%;
+    font-family: "RiotSquad", Impact, fantasy;
+    display: inline-block;
+
+}
+nav a.active {
+    background: #D9DC9E;
+}
+#agenda {
+    font-size: 18px;
+    margin: 0 0 60px 40px;
+
+}
+#agenda .item {
+    width: 700px;
+    padding: 15px 15px 15px 20px;
+    border-bottom: 2px dotted #D9DC9E;
+}
+#agenda .item .time {
+    width: 110px;
+    float: left;
+}
+#agenda .item .speaker {
+    width: 160px;
+    float: left;
+}
+#agenda .item .speaker a {
+    color: black;
+    font-weight: bold;
+}
+#agenda .item a:hover {
+    text-decoration: underline !important;
+}
+#agenda .description {
+    background: #F4ECDE;
+    padding: 20px 15px 20px 20px;
+}
+#agenda .featured {
+    background: #D9DC9E;
+}
+
 
 
 /*======================================================

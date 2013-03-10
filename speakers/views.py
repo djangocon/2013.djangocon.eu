@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 from pyquery import PyQuery
 
-from .models import Speaker, Talk
+from .models import Speaker, Talk, Agenda
 
 
 def get_lanyard():
@@ -34,4 +34,10 @@ def talks(request):
 
 	return render(request, "talks.html", {
 		'talks': Talk.objects.filter(is_public=True),
+	})
+
+def agenda(request):
+
+	return render(request, "agenda.html", {
+		'agenda': Agenda.objects.all(),
 	})

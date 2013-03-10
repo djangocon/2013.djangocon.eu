@@ -94,5 +94,17 @@ $(document).ready(function(){
 
     });
 
+    $('nav a.button').click(function(){
+        $('nav').find('a.button').each(function(){
+            $(this).removeClass('active');
+        });
+        $(this).addClass('active');
+
+        $('#agenda').find('.day').each(function(){
+            $(this).css('display', 'none');
+        });
+        $('#'+$(this).attr('data-id')).css('display', '');
+    });
+
 });
 
