@@ -24,9 +24,10 @@
         {% regroup agenda by day as agenda_list %}
 
         {% for day in agenda_list %}
-            <div id="day{{ day.grouper }}" class="day">
+            <div id="day{{ day.grouper }}" class="day"{% if not forloop.first %} style="display:none;"{% endif %}>
             {% for item in day.list %}
                 <div class="item{% if item.description %} description{% endif %}{% if item.is_featured %} featured{% endif %}">
+
                     <div class="time">
                         {{ item.start|date:"G:i" }} - {{ item.finish|date:"G:i" }}
                     </div>
@@ -44,7 +45,7 @@
                     {% endif %}
                 </div>
             {% endfor %}
-            <div>
+            </div>
         {% endfor %}
 
         <div style="clear:both"></div>
