@@ -14,7 +14,7 @@
          <div class="header">Talks</div>
 
         {% for talk in talks %}
-        <div id="{{ talk.speaker.slug }}" class="talk-box">
+        <div id="Talk{{ talk.id }}" class="talk-box">
 
             {% if talk.speaker.count > 1 %}
                 {% with speakers=talk.speaker.all %}

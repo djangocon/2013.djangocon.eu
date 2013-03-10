@@ -32,11 +32,11 @@
                         {{ item.start|date:"G:i" }} - {{ item.finish|date:"G:i" }}
                     </div>
                     {% if item.talk %}
-                        <div class="speaker{% if item.talk.speakers_names|characters_length > 19 %} multiline{% endif %}">
-                            <a href="{% url speakers:speakers %}#{% for speaker in item.talk.speakers %}{% if forloop.first %}{{ speaker.slug }}{% endif %}{% endfor %}">{{ item.talk.speakers_names }}</a>
+                        <div class="speaker{% if item.talk.speakers_names|characters_length > 20 %} multiline{% endif %}">
+                            <a href="{% url speakers:speakers %}#{% for speaker in item.talk.speakers.all %}{% if forloop.first %}{{ speaker.slug }}{% endif %}{% endfor %}">{{ item.talk.speakers_names }}</a>
                         </div>
                         <div class="text">
-                            <a href="{% url speakers:talks %}#{{ item.talk.id }}">{{ item.talk.title }}</a>
+                            <a href="{% url speakers:talks %}#Talk{{ item.talk.id }}">{{ item.talk.title }}</a>
                         </div>
                     {% else %}
                         <div class="text">

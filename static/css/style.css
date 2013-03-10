@@ -638,8 +638,9 @@ nav a.active {
     float: left;
 }
 #agenda .item .speaker {
-    width: 160px;
+    width: 155px;
     float: left;
+    padding-right: 5px;
 }
 #agenda .item .speaker a {
     color: black;
