@@ -32,7 +32,7 @@ class Talk(models.Model):
 		return self.title
 
 	def speakers_names(self):
-		return ', '.join([str(a) for a in self.speaker.all()])
+		return ' and '.join([str(a) for a in self.speaker.all()])
 	speakers_names.short_description = "Speakers"
 
 class Agenda(models.Model):

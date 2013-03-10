@@ -625,17 +625,16 @@ nav a.active {
     background: #D9DC9E;
 }
 #agenda {
-    font-size: 18px;
+    font-size: 17px;
     margin: 0 0 60px 40px;
-
 }
 #agenda .item {
-    width: 700px;
+    width: 710px;
     padding: 15px 15px 15px 20px;
     border-bottom: 2px dotted #D9DC9E;
 }
 #agenda .item .time {
-    width: 110px;
+    width: 120px;
     float: left;
 }
 #agenda .item .speaker {
@@ -645,6 +644,9 @@ nav a.active {
 #agenda .item .speaker a {
     color: black;
     font-weight: bold;
+}
+#agenda .multiline {
+    margin-top: -8px;
 }
 #agenda .item a:hover {
     text-decoration: underline !important;

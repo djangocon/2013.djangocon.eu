@@ -39,7 +39,7 @@
             {% endif %}
 
             <div class="talk">
-                <h3><a href="{% url speakers:talks %}#{{ talk.speaker.slug }}">{{ talk.title }}</a></h3>
+                <h3><a href="{% url speakers:talks %}#{{ talk.id }}">{{ talk.title }}</a></h3>
                 {{ talk.description|safe|linebreaksbr|urlize }}
             </div>
             <div style="clear:both"></div>

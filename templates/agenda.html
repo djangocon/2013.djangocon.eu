@@ -1,5 +1,7 @@
 {% extends 'index.html' %}
 
+{% load speakers_tags %}
+
 {% block title %}
     <title>Agenda - DjangoCon Europe 2013</title>
 {% endblock title %}
@@ -29,11 +31,11 @@
                         {{ item.start|date:"G:i" }} - {{ item.finish|date:"G:i" }}
                     </div>
                     {% if item.talk %}
-                        <div class="speaker">
-                            <a href="">{% for speaker in item.talk.speaker.all %}{{ speaker.first_name }} {{ speaker.last_name }}{% if item.talk.speaker.count > 1 %}{% if forloop.first %} and {% endif %}{% endif %}{% endfor %}</a>
+                        <div class="speaker{% if item.talk.speakers_names|characters_length > 17 %} multiline{% endif %}">
+                            <a href="{% url speakers:speakers %}#{% for speaker in item.talk.speakers %}{% if forloop.first %}{{ speaker.slug }}{% endif %}{% endfor %}">{{ item.talk.speakers_names }}</a>
                         </div>
                         <div class="text">
-                            <a href="">{{ item.talk.title }}</a>
+                            <a href="{% url speakers:talks %}#{{ item.talk.id }}">{{ item.talk.title }}</a>
                         </div>
                     {% else %}
                         <div class="text">
