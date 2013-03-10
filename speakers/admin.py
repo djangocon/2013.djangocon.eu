@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
-from .models import Speaker, Talk
+from .models import Speaker, Talk, Agenda
 
 class SpeakerAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'last_name','title','photo','is_public']
@@ -28,5 +28,10 @@ class TalkAdmin(admin.ModelAdmin):
         queryset.update(is_public=False)
     hide.short_description = u'Hide talks'
 
+class AgendaAdmin(admin.ModelAdmin):
+    list_display = ['talk', 'description', 'day', 'start', 'finish', 'is_featured']
+    list_editable = ['day', 'start', 'finish', 'is_featured']
+
 admin.site.register(Speaker, SpeakerAdmin)
 admin.site.register(Talk, TalkAdmin)
+admin.site.register(Agenda, AgendaAdmin)

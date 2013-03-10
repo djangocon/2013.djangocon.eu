@@ -34,3 +34,21 @@ class Talk(models.Model):
 	def speakers_names(self):
 		return ', '.join([str(a) for a in self.speaker.all()])
 	speakers_names.short_description = "Speakers"
+
+class Agenda(models.Model):
+	talk = models.ForeignKey(Talk, null=True, blank=True)
+	description = models.CharField(max_length=255, null=True, blank=True)
+	day = models.IntegerField(default=1, null=False, blank=False)
+	start = models.TimeField(null=False, blank=False)
+	finish = models.TimeField(null=False, blank=False)
+	is_featured = models.BooleanField(default=False, null=False, blank=False)
+
+	class Meta:
+		verbose_name = "Agenda item"
+		ordering = ('day', 'start')
+
+	def __unicode__(self):
+		if self.talk:
+			return self.talk.title
+		else:
+			return self.description
