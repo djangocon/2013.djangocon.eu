@@ -6,11 +6,13 @@ from pyquery import PyQuery
 
 from .models import Speaker, Talk, Agenda
 
-
 def get_lanyard():
-	page = PyQuery('http://lanyrd.com/2013/djangocon-europe/')
-	h2 = page('h2.force')
-	return int(PyQuery(h2[1]).text().split(' ')[0]) + int(PyQuery(h2[2]).text().split(' ')[0])
+	try:
+		page = PyQuery('http://lanyrd.com/2013/djangocon-europe/')
+		h2 = page('h2.force')
+		return int(PyQuery(h2[1]).text().split(' ')[0]) + int(PyQuery(h2[2]).text().split(' ')[0])
+	except:
+		return 0
 
 def index(request):
 
