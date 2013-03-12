@@ -23,6 +23,17 @@ body {
     -moz-transition: background-image 1.4s ease-in-out;
     -webkit-transition: background-image 1.4s ease-in-out;
 }
+
+h2 {
+    color: #d01e32;
+    font-family: "RiotSquad", sans-serif;
+    font-size: 30px;
+    margin: 0 0 10px 0;
+    line-height: 130%;
+    margin-top: 20px;
+}
+
+
 .second_background {
     width: 100%;
     height: 100%;
