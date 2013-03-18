@@ -15,7 +15,7 @@ urlpatterns = patterns('',
 
     url(r'', include('speakers.urls', namespace='speakers', app_name='speakers')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'', include('social_auth.urls')),
+    #url(r'', include('social_auth.urls')),
 
 )
 
