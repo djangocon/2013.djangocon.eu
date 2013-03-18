@@ -459,6 +459,9 @@ p.circusrole{
 #sponsors .logos p img {
     margin: 0 30px 30px 0;
 }
+#sponsors #party p img {
+    margin-left: 40px;
+}
 .sponsorship_opportunities {
     clear: both;
     margin: 20px 0 20px 100px;
