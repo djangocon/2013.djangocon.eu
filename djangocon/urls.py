@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^codeofconduct/$', TemplateView.as_view(template_name='codeofconduct.html')),
     url(r'^venue/$', TemplateView.as_view(template_name='venue.html')),
     url(r'^getaround/$', TemplateView.as_view(template_name='getaround.html')),
+    url(r'^hotel/$', TemplateView.as_view(template_name='hotel.html')),
 
     url(r'', include('speakers.urls', namespace='speakers', app_name='speakers')),
     url(r'^admin/', include(admin.site.urls)),
