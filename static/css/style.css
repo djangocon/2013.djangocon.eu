@@ -792,3 +792,8 @@ nav a.active {
         font-size: 24px;
     }
 }
+
+@media print {
+    .top_menu {display: none;}
+}
+
