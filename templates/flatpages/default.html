@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>{{ flatpage.title }} - DjangoCon Europe 2013</title>
+{% endblock title %}
+
+{% block content %}
+<div class="popup venue">
+    <div class="header">
+       {{ flatpage.title }}
+    </div>
+    <div class="content">
+        {{ flatpage.content }}
+
+        <div style="clear:both;"></div>
+    </div>
+</div>
+{% endblock content %}
